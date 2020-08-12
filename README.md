@@ -12,8 +12,10 @@
 
 # 荣誉墙
 
-- [@woniudiancang 蜗牛小姐姐，本项目主导者、发起人](https://github.com/woniudiancang)
-- [@wangxy2020 Jack Wong](https://github.com/wangxy2020)
+- [@syvia](https://github.com/yuwangjuan)
+- [@tarkuni](https://github.com/tarkuni)
+- [@JinPu Shi](https://github.com/Shkin1)
+
 
 # 功能展示
 ## 首页
