@@ -15,13 +15,31 @@ Page({
     showCartPop: false, // 是否显示购物车列表
     showGoodsDetailPOP: false, // 是否显示商品详情
     showCouponPop: false, // 是否弹出优惠券领取提示
+    polyline: [{
+      points: [{
+        longitude: 116.45,
+        latitude: 39.906609
+      },
+       {
+        longitude: 116.429903,
+        latitude: 39.906609
+      }
+      // {
+      //   longitude: 116.329903,
+      //   latitude: 39.906609
+      // }
+    ],
+      color:"#DC143C",
+      width: 5,
+      dottedLine: false
+    }],
   },  
   onLoad: function () {
     // 设置标题
     const mallName = wx.getStorageSync('mallName')
     if (mallName) {
       wx.setNavigationBarTitle({
-        title: mallName
+        title: "线路图"
       })
     }
     // 读取默认配送方式

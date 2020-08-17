@@ -1,4 +1,4 @@
-<view class="box">
+<!-- <view class="box">
   <view class="shop-name">
     <view class="name">{{shopInfo.name}}</view>
     <view class="select">
@@ -111,7 +111,7 @@
       <van-stepper value="{{ item.number }}" min="0" async-change disable-input data-idx="{{index}}" bind:change="cartStepChange"/>
     </view>
   </view>
-</van-popup>
+</van-popup> -->
 
 <!-- <van-popup
   show="{{ true }}"
@@ -161,11 +161,12 @@
 </view>
 </van-popup>  -->
 
-
+<!-- 
 <van-dialog id="van-dialog-auth-login" bind:getuserinfo="processLogin" />
 
 <van-overlay show="{{ showCouponPop }}" bind:click="couponOverlayClick">
   <view class="couponOverlay-container">
     <image src="/images/coupon.png" bindtap="couponImageClick"></image>
   </view>
-</van-overlay>
+</van-overlay> -->
+<map id="map" class="maMap" latitude="{{shopInfo.latitude}}" longitude="{{shopInfo.longitude}}" markers="{{markers}}"  polyline="{{polyline}}" show-location enable-3D	show-compass show-scale	enable-rotate	enable-traffic />
