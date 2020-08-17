@@ -11,7 +11,9 @@ Page({
     isLogined: true
   },
   onLoad: function (options) {
-    
+    wx.setNavigationBarTitle({
+      title: "签约"
+    })
   },
   onShow: function () {
     AUTH.checkHasLogined().then(isLogined => {

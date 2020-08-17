@@ -3,6 +3,7 @@ const WXAPI = require('apifm-wxapi')
 APP.configLoadOK = () => {
   wx.setNavigationBarTitle({
     title: wx.getStorageSync('mallName')
+    // title:"签约"
   })
 }
 const wxbarcode = require('wxbarcode')
