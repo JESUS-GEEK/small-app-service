@@ -41,7 +41,7 @@
         "pagePath": "pages/index/index",
         "iconPath": "images/nav/index-off.png",
         "selectedIconPath": "images/nav/index-on.png",
-        "text": "地图"
+        "text": "地图定位"
       },
       {
         "pagePath": "pages/order-details/doing",
