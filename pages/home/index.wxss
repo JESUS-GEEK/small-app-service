@@ -1,0 +1,32 @@
+/* pages/home/index.wxss */
+.container-body{
+  width:90%;
+}
+.add-col{
+  text-align:center;
+  color:#686868;
+}
+.order {
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+.order .line {
+  display: inline-block;
+  width: 80px;
+  border-top: 1px solid #ddd ;
+}
+.order .txt {
+  color: #686868;
+  vertical-align: -4px;
+  padding:0 10px;
+}
+.footer-timeout{
+  width:200px;
+  height:30px;
+  line-height:30px;
+  background-color: #e64340;
+  border-radius:10px;
+  color:#fff;
+  padding-left:10px;
+}

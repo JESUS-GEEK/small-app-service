@@ -1,0 +1,86 @@
+<!--pages/home/index.wxml-->
+<view class="container-body">
+	<van-search value="{{ value }}" placeholder="请输入班车查询" shape="round" />
+	<!-- swiper -->
+	<view class="page-section page-section-spacing swiper">
+		<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+			<block wx:for="{{images}}" wx:key="*this">
+				<swiper-item>
+					<view class="swiper-item">
+						<image src="{{item}}" style="width:100%;height:200px" />
+					</view>
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+	<van-notice-bar left-icon="volume-o" speed="30" text="云租接送，城市共享班车平台，提供稳定便捷的上下班接送服务。" backgroundColor="#fff">
+	</van-notice-bar>
+	<van-row>
+		<van-col class="add-col" span="8">
+			<image style="width:30%;height:32px;margin-left:35%" src="../../images/ds.png" />
+		</van-col>
+		<van-col class="add-col" span="8">
+			<image style="width:30%;height:32px;margin-left:35%" src="../../images/hz.png" />
+		</van-col>
+		<van-col class="add-col" span="8">
+			<image style="width:30%;height:32px;margin-left:35%" src="../../images/mz.png" />
+		</van-col>
+	</van-row>
+	<van-row>
+		<van-col class="add-col" span="8">
+			合作学校
+		</van-col>
+		<van-col class="add-col" span="8">
+			车辆信息
+		</van-col>
+		<van-col class="add-col" span="8">
+			车辆路线
+		</van-col>
+	</van-row>
+	<view style="margin-top:15px"></view>
+	<van-row>
+		<van-col class="add-col" span="8">
+			<image style="width:30%;height:32px;margin-left:35%" src="../../images/mz.png" />
+		</van-col>
+		<van-col class="add-col" span="8">
+			<image style="width:30%;height:32px;margin-left:35%" src="../../images/yq.png" />
+		</van-col>
+		<van-col class="add-col" span="8">
+			<image style="width:30%;height:32px;margin-left:35%" src="../../images/zy.png" />
+		</van-col>
+	</van-row>
+	<van-row>
+		<van-col class="add-col" span="8">
+			实时路线
+		</van-col>
+		<van-col class="add-col" span="8">
+			咨询电话
+		</van-col>
+		<van-col class="add-col" span="8">
+			关于我们
+		</van-col>
+	</van-row>
+	<view>
+		<view class="order">
+			<text class="line"></text>
+			<text class="txt">包月套餐</text>
+			<text class="line"></text>
+		</view>
+		<van-card num="2" price="10.00" origin-price="10.00" desc="月卡优惠" title="月卡" tag="hot" thumb="/images/vip.jpg" />
+	</view>
+	<view>
+		<view class="order">
+			<text class="line"></text>
+			<text class="txt">限时秒杀</text>
+			<text class="line"></text>
+		</view>
+		<van-card price="9.9" origin-price="10.00" desc="活动多多，欢迎参加与，更多活动，可电话咨询" tag="hot" thumb="/images/vip.jpg">
+			<view slot="price-top">
+				<view class="footer-timeout"><text>剩余：{{countDownDay}}天\t{{countDownHour}}\t时\t{{countDownMinute}}\t分\t{{countDownSecond}}\t秒</text></view>
+			</view>
+			<view slot="footer">
+				<van-button type="danger" size="small">立即抢购</van-button>
+			</view>
+		</van-card>
+	</view>
+</view>
