@@ -169,4 +169,45 @@
     <image src="/images/coupon.png" bindtap="couponImageClick"></image>
   </view>
 </van-overlay> -->
-<map id="map" class="maMap" latitude="{{shopInfo.latitude}}" longitude="{{shopInfo.longitude}}" markers="{{markers}}"  polyline="{{polyline}}" show-location enable-3D	show-compass show-scale	enable-rotate	enable-traffic />
+<!-- <cover-view> -->
+
+
+<map id="map" class="maMap" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}"  polyline="{{polyline}}" show-location enable-3D	show-compass show-scale	enable-rotate	enable-traffic >
+<cover-view class="map-cover">	
+<van-search value="{{ value }}" placeholder="请输入班车查询" shape="round" />
+<van-icon name="hot-o"  bindtap="showDetails" class="map-cover-icon"/>
+<van-popup
+  show="{{ show }}"
+  closeable
+  close-icon="close"
+  position="bottom"
+  custom-style="height: 60%"
+  bind:close="onClose"
+>
+<view class="accordion-box">
+<van-collapse accordion value="{{ activeName }}" bind:change="onChange" >
+  <van-collapse-item title="三号早晚班--枫丹白露湖公馆" name="1" >
+    <view>
+    <van-button type="info" size="mini">车次</van-button> 约07:30/17:00
+    </view>
+    <view>约30分钟（10公里）</view>
+    <view>车长：shkin(讯飞员工)  15675519992</view>
+    <van-steps
+  steps="{{ steps }}"
+  active="{{ activeStep }}"
+  direction="vertical"
+  active-color="#07c160"
+/>
+  </van-collapse-item>
+  <van-collapse-item title="二号早晚班-国购广场" name="2">
+    网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失
+  </van-collapse-item>
+  <van-collapse-item title="一号早晚班--之心城" name="3">
+    线上拓客，随时预约，贴心顺手的开单收银
+  </van-collapse-item>
+</van-collapse>
+</view>
+</van-popup>
+</cover-view>
+</map>
+<!-- </cover-view> -->
