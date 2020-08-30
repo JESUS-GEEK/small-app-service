@@ -1,4 +1,4 @@
-// pages/shop/select.js
+// pages/about-us/index.js
 Page({
 
   /**

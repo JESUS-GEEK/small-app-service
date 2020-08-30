@@ -8,34 +8,29 @@ APP.configLoadOK = () => {
 }
 Page({
   data: {
-    persionNum: ['1-2人', '3-4人', '5-8人', '8人以上'],
-    persionNumIndex: 0,
-    showDatetimePop: false,
-    formatter(type, value) {
-      if (type === 'year') {
-        return `${value}年`;
-      } else if (type === 'month') {
-        return `${value}月`;
-      } else if (type === 'day') {
-        return `${value}日`;
-      } else if (type === 'hour') {
-        return `${value}点`;
-      } else if (type === 'minute') {
-        return `${value}分`;
-      }
-      return value;
-    },
-    filter(type, options) {
-      if (type === 'minute') {
-        return options.filter((option) => option % 10 === 0);
-      }
-      return options;
-    },
-    currentDate: new Date().getTime(),
-    minDate: new Date().getTime(),
+    show: false,
+    line:'',
+    actions: [
+      {
+        name: '枫丹白露湖公馆线路',
+        value:0,
+      },
+      {
+        name: '枫丹白露湖公馆线路',
+        value:1,
+      },
+      {
+        name: '枫丹白露湖公馆线路',
+        value:2,
+      
+      },
+    ],
+
   },
   onLoad: function (options) {
-
+    wx.setNavigationBarTitle({
+      title: "我的签约"
+    })
   },
   onShow: function () {
 
@@ -43,6 +38,22 @@ Page({
   changePersionNum(e) {
     this.setData({
       persionNumIndex: e.currentTarget.dataset.idx
+    })
+  },
+  onClose() {
+    this.setData({ show: false });
+  },
+  onDisplay(e) {
+    console.log(e,'e');
+    this.setData({
+      show:true,
+      // line:
+    });
+  },
+  onSelect(event) {
+    console.log(event.detail);
+    this.setData({
+      line:event.detail.name
     })
   },
   async submit() {

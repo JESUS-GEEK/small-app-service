@@ -1,6 +1,7 @@
-const CONFIG = require('../../config.js')
-const WXAPI = require('apifm-wxapi')
-const AUTH = require('../../utils/auth')
+var CONFIG = require('../../config.js')
+var api = require('../../config/api.js');
+var util = require('../../utils/request.js');
+var user = require('../../utils/user.js');
 const APP = getApp()
 APP.configLoadOK = () => {
 
@@ -8,6 +9,11 @@ APP.configLoadOK = () => {
 
 Page({
   data: {
+    userInfo: {
+      nickName: '点击登录',
+      avatarUrl: '/static/images/avatar.png'
+    },
+    hasLogin: false,
     couponStatistics: {
       canUse: 0
     },
@@ -22,25 +28,28 @@ Page({
     })
   },
   onShow() {
-    AUTH.checkHasLogined().then(isLogined => {
-      if (isLogined) {
-        this.getUserApiInfo()
-        this.getUserAmount()
-        this.couponStatistics()
-      }
-    })
+     //获取用户的登录信息
+   console.log(APP.globalData,'APP.globalData')
+    //  if (APP.globalData.hasLogin) {
+    //   let userInfo = wx.getStorageSync('userInfo');
+    //   console.log(userInfo,'userInfo')
+    //   this.setData({
+    //     userInfo: userInfo,
+    //     hasLogin: true
+    //   });
+    // }
   },
-  async getUserApiInfo() {
-    const res = await WXAPI.userDetail(wx.getStorageSync('token'))
-    if (res.code == 0) {
-      const _data = {}
-      _data.apiUserInfoMap = res.data
-      if (this.data.order_hx_uids && this.data.order_hx_uids.indexOf(res.data.base.id) != -1) {
-        _data.canHX = true // 具有扫码核销的权限
-      }
-      this.setData(_data)
-    }
-  },
+  // async getUserApiInfo() {
+  //   const res = await WXAPI.userDetail(wx.getStorageSync('token'))
+  //   if (res.code == 0) {
+  //     const _data = {}
+  //     _data.apiUserInfoMap = res.data
+  //     if (this.data.order_hx_uids && this.data.order_hx_uids.indexOf(res.data.base.id) != -1) {
+  //       _data.canHX = true // 具有扫码核销的权限
+  //     }
+  //     this.setData(_data)
+  //   }
+  // },
   async couponStatistics() {
     const res = await WXAPI.couponStatistics(wx.getStorageSync('token'))
     if (res.code == 0) {
@@ -60,13 +69,35 @@ Page({
   processLogin(e) {
     console.log(e,'e')
     if (!e.detail.userInfo) {
-      wx.showToast({
-        title: '已取消',
-        icon: 'none',
-      })
-      return;
+      wx.navigateTo({
+        url: "/pages/auth/login/login"
+      });
+    }else{
+      // const _data = {}
+      // _data.apiUserInfoMap = res.data
+      this.setData({
+        userInfo: e.detail.userInfo,
+        hasLogin: true
+      });
+      user.checkLogin().catch(() => {
+        console.log(e.detail.userInfo.nickName.includes('Syvia'))
+       if( e.detail.userInfo.nickName.includes('Syvia')){
+        e.detail.userInfo.nickName = "Syvia"
+       }
+        console.log(e.detail.userInfo.nickName)
+        user.loginByWeixin(e.detail.userInfo).then(res => {
+          APP.globalData.hasLogin = true;
+  
+          // wx.navigateBack({
+          //   delta: 1
+          // })
+        }).catch((err) => {
+          APP.globalData.hasLogin = false;
+          // util.showErrorToast('微信登录失败');
+        });
+  
+      });
     }
-    AUTH.register(this);
   },
   scanOrderCode(){
     wx.scanCode({

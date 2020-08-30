@@ -1,0 +1,4 @@
+<!--pages/us/index.wxml在线咨询-->
+<view>
+<button open-type="contact" bindcontact="handleContact"></button>
+</view>

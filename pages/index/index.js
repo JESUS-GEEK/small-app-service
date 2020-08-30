@@ -1,6 +1,6 @@
 const APP = getApp()
 const AUTH = require('../../utils/auth')
-const WXAPI = require('apifm-wxapi')
+// const WXAPI = require('apifm-wxapi')
 
 // fixed首次打开不显示标题的bug
 APP.configLoadOK = () => {

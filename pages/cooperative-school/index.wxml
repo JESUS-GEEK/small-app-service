@@ -1,0 +1,41 @@
+<!--pages/cooperative-school/index.wxml-->
+<view>
+<view class="title">合作学校</view>
+<van-card
+  
+  desc="我公司与一六八中学简历良好的合作关系,目前与我司合作的学生有100余人。"
+  title="合肥市一六八中学"
+  thumb="/images/school/168.jpeg"
+>
+</van-card>
+<van-card
+  
+  desc="我公司与寿春中学简历良好的合作关系,目前与我司合作的学生有100余人。"
+  title="合肥市寿春中学"
+  thumb="/images/school/shouchun.jpg"
+>
+</van-card>
+<van-card
+  
+  desc="我公司与合肥市一中简历良好的合作关系,目前与我司合作的学生有100余人。"
+  title="合肥市一中"
+  thumb="/images/school/yizhong.jpg"
+>
+</van-card>
+<van-card
+  
+  desc="我公司与三十五中学简历良好的合作关系,目前与我司合作的学生有100余人。"
+  title="合肥市三十五中学"
+  thumb="/images/school/35.jpg"
+>
+</van-card>
+<van-card
+  
+  desc="我公司与六安路小学简历良好的合作关系,目前与我司合作的学生有100余人。"
+  title="合肥市六安路小学"
+  thumb="/images/school/liuan.jpg"
+>
+</van-card>
+
+
+</view>

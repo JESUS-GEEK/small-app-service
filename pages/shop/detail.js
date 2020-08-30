@@ -1,65 +1,66 @@
-const WXAPI = require('apifm-wxapi')
-const APP = getApp()
-APP.configLoadOK = () => {
-
-}
-
+// pages/shop/detail.js
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    markers: [],
+
   },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
   onLoad: function (options) {
-    // options.id = 36
-    this.data.id = options.id
-    this.shopSubdetail()
+
   },
-  async shopSubdetail() {
-    const res = await WXAPI.shopSubdetail(this.data.id)
-    if (res.code != 0) {
-      wx.showModal({
-        title: '出错了',
-        content: res.msg,
-        showCancel: false
-      })
-      wx.navigateBack()
-    } else {
-      wx.setNavigationBarTitle({
-        title: res.data.info.name,
-      })
-      const marker = {
-        latitude: res.data.info.latitude,
-        longitude: res.data.info.longitude,
-        iconPath: wx.getStorageSync('mapPos'),
-        height: 30,
-        width: 30,
-      }
-      const markers = [marker]
-      this.setData({
-        shopSubdetailData: res.data,
-        shopInfo: res.data.info,
-        markers
-      })
-    }
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
   },
-  // 
-  phoneCall:function(){
-    var phoneNumber = this.data.shopInfo.linkPhone
-    wx.makePhoneCall({
-      phoneNumber,
-      // phoneNumber: phoneNumber,
-    })
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
   },
-  // 
-  guideNow: function(){
-    var name = this.data.shopInfo.name
-    var address = this.data.shopInfo.address
-    var latitude = this.data.shopInfo.latitude
-    var longitude = this.data.shopInfo.longitude
-    wx.openLocation({
-      name: name,
-      address: address,
-      latitude: latitude,
-      longitude: longitude,
-    })
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
   },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
 })

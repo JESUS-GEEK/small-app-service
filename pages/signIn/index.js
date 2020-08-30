@@ -1,4 +1,7 @@
 // pages/signIn/index.js
+var api = require('../../config/api.js');
+var util = require('../../utils/request.js');
+var user = require('../../utils/user.js');
 Page({
 
   /**
@@ -38,25 +41,30 @@ Page({
     //接收后端数据
    this.getSignInfo();
   },
-  getSignInfo(){
+  getSignInfo(e){
     let that = this;
-
-    app.ajax({
-      url: "Signin|getSignInfo",
-      data: {
-        id:this.data.uInfo.id
+    let shareUserId = wx.getStorageSync('shareUserId');
+console.log(e,shareUserId,'this.data')
+    util.request(
+      api.signIn,{
+        userId:'',
+      },"GET"
+      // data: {
+      //   id:this.data.uInfo.id
         
-      },
-      success: function (res) {
-        console.log('连接成功')
-        that.setData({
-          signNum: res.data.signNum,
-          min: res.data.min //接收到的数据，页面调用的是这里的数据
-        })
-      },
+      // },
+      // success: function (res) {
+      //   console.log('连接成功')
+      //   that.setData({
+      //     signNum: res.data.signNum,
+      //     min: res.data.min //接收到的数据，页面调用的是这里的数据
+      //   })
+      // },
       // fail: function (res) {
       //   console.log("连接失败")
       // }
+    ).then((res)=>{
+      console.log(res,'res')
     })
 
   },

@@ -24,11 +24,20 @@
   top: 8rpx;
 }
 .btn {
-  padding: 0 32rpx;
+  margin-top: 100rpx;
+  padding: 0 132rpx;
 }
 .profile {
   text-align: center;
   color: #999;
   font-size: 26rpx;
   margin-top: 32rpx;
+}
+.van-cell__value {
+  text-align:left !important;
+}
+.van-cell__title,.van-cell__value{
+  color: #646566;
+  font-size: 17px;
+
 }

@@ -19,7 +19,13 @@
     "pages/asset/index",
     "pages/asset/recharge-log",
     "pages/asset/cash-log",
-    "pages/signIn/index"
+    "pages/signIn/index",
+    "pages/auth/login/login",
+    "pages/cooperative-school/index",
+    "pages/school-bus/index",
+    "pages/car-info/index",
+    "pages/us/index",
+    "pages/about-us/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -84,7 +90,10 @@
     "van-collapse": "@vant/weapp/collapse/index",
     "van-collapse-item": "@vant/weapp/collapse-item/index",
     "van-steps": "@vant/weapp/steps/index",
-    "van-notice-bar": "@vant/weapp/notice-bar/index"
+    "van-notice-bar": "@vant/weapp/notice-bar/index",
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "van-action-sheet": "@vant/weapp/action-sheet/index"
   },
   "sitemapLocation": "sitemap.json"
 }

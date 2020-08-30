@@ -1,0 +1,37 @@
+<!--pages/about-us/index.wxml关于我们-->
+<view>
+<view class="title">关于我们</view>
+<van-divider/>
+<view class="main-box">
+<van-row class="row-box">
+  <van-col span="8">项目名称：</van-col>
+  <van-col span="16">云租接送</van-col> 
+</van-row>
+<van-divider/>
+<van-row class="row-box">
+  <van-col span="8">项目地址：</van-col>
+  <van-col span="16">http://www.baidu.com</van-col> 
+</van-row>
+<van-divider/>
+<van-row class="row-box">
+  <van-col span="8">电话号码：</van-col>
+  <van-col span="16">13329061556</van-col> 
+</van-row>
+<van-divider/>
+<van-row class="row-box">
+  <van-col span="8">QQ交流：</van-col>
+  <van-col span="16">1182929292</van-col> 
+</van-row>
+<van-divider/>
+<van-row class="row-box">
+  <van-col span="8">当前版本：</van-col>
+  <van-col span="16">V2.0.1</van-col> 
+</van-row>
+<van-divider/>
+<van-row class="row-box">
+  <van-col span="8">开源协议：</van-col>
+  <van-col span="16">MIT</van-col> 
+</van-row>
+<van-divider/>
+</view>
+</view>

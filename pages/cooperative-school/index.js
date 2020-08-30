@@ -1,18 +1,25 @@
-// pages/shop/select.js
+// pages/cooperative-school/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    
+        img01:'../../images/school/168.jpeg',
+        img02:'../../images/school/50.jpg',
+        img03:'../../images/school/shouchun.jpg',
+        img04:'../../images/school/yizhong.jpg',
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.setNavigationBarTitle({
+      title: "合作学校"
+    })
   },
 
   /**

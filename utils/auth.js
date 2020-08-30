@@ -1,5 +1,4 @@
 const WXAPI = require('apifm-wxapi')
-import Base from './base.js'
 // const Dialog = require('@vant/weapp/dialog/dialog')
 import Dialog from '@vant/weapp/dialog/dialog'
 

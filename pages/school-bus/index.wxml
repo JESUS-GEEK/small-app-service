@@ -1,0 +1,81 @@
+<!--pages/school-bus/index.wxml车辆信息-->
+<view >
+<view class="title">班车信息</view>
+<view class="main-box">
+<van-row class="row-box">
+  <van-col span="8">班车线路：</van-col>
+  <van-col span="16">半岛线</van-col> 
+</van-row>
+<van-row class="row-box">
+  <van-col span="8">司机姓名：</van-col>
+  <van-col span="16">石金普</van-col> 
+</van-row>
+<van-row class="row-box">
+  <van-col span="8">司机电话：</van-col>
+  <van-col span="16">13329061556</van-col> 
+</van-row>
+<van-row class="row-box">
+  <van-col span="8">学生人数：</van-col>
+  <van-col span="16">20人</van-col> 
+</van-row>
+<!-- <van-row class="row-box">
+  <van-col span="6">班车线路：</van-col>
+  <van-col span="16">讯飞大厦->大蜀山->枫丹白露湖公馆</van-col> 
+</van-row> -->
+<van-divider/>
+<van-row class="row-box">
+  <van-col span="8">班车线路：</van-col>
+  <van-col span="16">半岛线</van-col> 
+</van-row>
+<van-row class="row-box">
+  <van-col span="8">司机姓名：</van-col>
+  <van-col span="16">石金普</van-col> 
+</van-row>
+<van-row class="row-box">
+  <van-col span="8">司机电话：</van-col>
+  <van-col span="16">13329061556</van-col> 
+</van-row>
+<van-row class="row-box">
+  <van-col span="8">学生人数：</van-col>
+  <van-col span="16">20人</van-col> 
+</van-row>
+<!-- <van-row class="row-box">
+  <van-col span="6">班车线路：</van-col>
+  <van-col span="16">讯飞大厦->大蜀山->枫丹白露湖公馆</van-col> 
+</van-row> -->
+<van-divider/>
+<van-row class="row-box">
+  <van-col span="8">班车线路：</van-col>
+  <van-col span="16">半岛线</van-col> 
+</van-row>
+<van-row class="row-box">
+  <van-col span="8">司机姓名：</van-col>
+  <van-col span="16">石金普</van-col> 
+</van-row>
+<van-row class="row-box">
+  <van-col span="8">司机电话：</van-col>
+  <van-col span="16">13329061556</van-col> 
+</van-row>
+<van-row class="row-box">
+  <van-col span="8">学生人数：</van-col>
+  <van-col span="16">20人</van-col> 
+</van-row>
+<van-divider/>
+<van-row class="row-box">
+  <van-col span="8">班车线路：</van-col>
+  <van-col span="16">半岛线</van-col> 
+</van-row>
+<van-row class="row-box">
+  <van-col span="8">司机姓名：</van-col>
+  <van-col span="16">石金普</van-col> 
+</van-row>
+<van-row class="row-box">
+  <van-col span="8">司机电话：</van-col>
+  <van-col span="16">13329061556</van-col> 
+</van-row>
+<van-row class="row-box">
+  <van-col span="8">学生人数：</van-col>
+  <van-col span="16">20人</van-col> 
+</van-row>
+</view>
+</view>

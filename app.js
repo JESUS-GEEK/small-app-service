@@ -1,10 +1,10 @@
-const WXAPI = require('apifm-wxapi')
+
 const CONFIG = require('config.js')
 const AUTH = require('utils/auth')
 
 App({
   onLaunch: function() {    
-    WXAPI.init(CONFIG.subDomain)
+    // WXAPI.init(CONFIG.subDomain)
     const that = this;
     // 检测新版本
     const updateManager = wx.getUpdateManager()
@@ -54,16 +54,16 @@ App({
         wx.hideToast()
       }
     })
-    WXAPI.queryConfigBatch('mallName,myBg,mapPos,order_hx_uids,subscribe_ids,share_profile,zxdz').then(res => {
-      if (res.code == 0) {
-        res.data.forEach(config => {
-          wx.setStorageSync(config.key, config.value);
-        })
-        if (this.configLoadOK) {
-          this.configLoadOK()
-        }
-      }
-    })
+    // WXAPI.queryConfigBatch('mallName,myBg,mapPos,order_hx_uids,subscribe_ids,share_profile,zxdz').then(res => {
+    //   if (res.code == 0) {
+    //     res.data.forEach(config => {
+    //       wx.setStorageSync(config.key, config.value);
+    //     })
+    //     if (this.configLoadOK) {
+    //       this.configLoadOK()
+    //     }
+    //   }
+    // })
 
   },
   onShow (e) {
@@ -80,24 +80,24 @@ App({
               encryptedData: res.encryptedData,
               iv: res.iv
             })
-            wx.login({
-              success(loginRes) {
-                if (loginRes.code) {
-                  WXAPI.shareGroupGetScore(
-                    loginRes.code,
-                    e.query.inviter_id,
-                    res.encryptedData,
-                    res.iv
-                  ).then(_res => {
-                    console.log(_res)
-                  }).catch(err => {
-                    console.error(err)
-                  })
-                } else {
-                  console.error('登录失败！' + loginRes.errMsg)
-                }
-              }
-            })
+            // wx.login({
+            //   success(loginRes) {
+            //     if (loginRes.code) {
+            //       WXAPI.shareGroupGetScore(
+            //         loginRes.code,
+            //         e.query.inviter_id,
+            //         res.encryptedData,
+            //         res.iv
+            //       ).then(_res => {
+            //         console.log(_res)
+            //       }).catch(err => {
+            //         console.error(err)
+            //       })
+            //     } else {
+            //       console.error('登录失败！' + loginRes.errMsg)
+            //     }
+            //   }
+            // })
           }
         })
       }

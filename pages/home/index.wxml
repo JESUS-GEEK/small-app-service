@@ -1,6 +1,6 @@
 <!--pages/home/index.wxml-->
 <view class="container-body">
-	<van-search value="{{ value }}" placeholder="请输入班车查询" shape="round" />
+	<!-- <van-search value="{{ value }}" placeholder="请输入班车查询" shape="round" /> -->
 	<!-- swiper -->
 	<view class="swiper-box">
 	<view class="page-section page-section-spacing swiper">
@@ -19,8 +19,8 @@
 	</van-notice-bar>
 	<view style="margin-top:20px;">
 	<van-row >
-		<van-col class="add-col" span="8">
-			<image style="width:30%;height:32px;margin-left:35%" src="../../images/ds.png" />
+		<van-col class="add-col" span="8" >
+			<image style="width:30%;height:32px;margin-left:35%" src="../../images/ds.png" is-link url="pages/cooperative-school/index"/>
 		</van-col>
 		<van-col class="add-col" span="8">
 			<image style="width:30%;height:32px;margin-left:35%" src="../../images/hz.png" />
@@ -31,14 +31,14 @@
 	</van-row>
 	<view style="margin-top:10px;">
 	<van-row style="margin-top:10px;">
-		<van-col class="add-col" span="8">
-			合作学校
+		<van-col class="add-col" span="8"  >
+			<navigator  is-link url="/pages/cooperative-school/index" open-type="redirect">合作学校</navigator >
 		</van-col>
 		<van-col class="add-col" span="8">
-			车辆信息
+			<navigator is-link url="/pages/school-bus/index" open-type="redirect">车辆信息</navigator>
 		</van-col>
 		<van-col class="add-col" span="8">
-			车辆路线
+			<navigator is-link url="/pages/car-info/index" open-type="redirect">班车线路</navigator>
 		</van-col>
 	</van-row>
 	</view>
@@ -60,10 +60,10 @@
 			实时路线
 		</van-col>
 		<van-col class="add-col" span="8">
-			咨询电话
+		<navigator is-link url="/pages/us/index" open-type="redirect">在线咨询</navigator>
 		</van-col>
 		<van-col class="add-col" span="8">
-			关于我们
+		<navigator is-link url="/pages/about-us/index" open-type="redirect">关于我们</navigator>	
 		</van-col>
 	</van-row>
 	<!-- <view>

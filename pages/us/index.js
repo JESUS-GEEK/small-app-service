@@ -1,4 +1,4 @@
-// pages/shop/select.js
+// pages/us/index.js
 Page({
 
   /**
@@ -14,7 +14,10 @@ Page({
   onLoad: function (options) {
 
   },
-
+  handleContact (e) {
+    console.log(e.detail.path)
+    console.log(e.detail.query)
+},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

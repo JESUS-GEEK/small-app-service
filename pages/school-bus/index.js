@@ -1,4 +1,4 @@
-// pages/shop/select.js
+// pages/school-bus/index.js
 Page({
 
   /**

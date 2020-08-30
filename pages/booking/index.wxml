@@ -1,10 +1,18 @@
 <van-field
-  label="姓名"
+  label="孩子姓名"
   size="large"
   focus
   clearable
   model:value="{{ name }}"
   placeholder="请输入联系人"
+/>
+<van-field
+  type="number"
+  label="父母姓名"
+  size="large"
+  clearable
+  model:value="{{ valueParent }}"
+  placeholder="方便我们联系您"
 />
 <van-field
   type="number"
@@ -15,6 +23,49 @@
   placeholder="方便我们联系您"
 />
 <van-field
+  label="家庭地址"
+  size="large"
+  focus
+  clearable
+  model:value="{{ address }}"
+  placeholder="请输入家庭地址"
+/>
+<van-field
+  label="学校名称"
+  size="large"
+  focus
+  clearable
+  model:value="{{ schoolName }}"
+  placeholder="请输入学校名称"
+/>
+<van-field
+  label="学校地址"
+  size="large"
+  focus
+  clearable
+  model:value="{{ schoolAddress }}"
+  placeholder="请输入学校地址"
+/>
+<van-field
+  label="下课时间"
+  size="large"
+  focus
+  clearable
+  model:value="{{ afterClass }}"
+  placeholder="请输入下课时间"
+/>
+<van-cell title="班车路线" value="{{ line }}" is-link bind:click="onDisplay" />
+<van-action-sheet
+title="班车线路"
+  show="{{ show }}"
+  actions="{{ actions }}"
+  bind:close="onClose"
+  bind:select="onSelect"
+/>
+<!-- <van-dropdown-menu>
+  <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}"/>
+</van-dropdown-menu> -->
+<!-- <van-field
   label="到店时间"
   size="large"
   readonly
@@ -22,8 +73,8 @@
   placeholder="选择预计到店时间"
   is-link
   bindtap="showDatetimePop"
-/>
-<van-divider contentPosition="center">
+/> -->
+<!-- <van-divider contentPosition="center">
   用餐人数
 </van-divider>
 <view class="persion-num">
@@ -31,19 +82,19 @@
     {{ item }}
     <van-icon wx:if="{{persionNumIndex == index}}" custom-class="icon" name="success" />
   </view>
-</view>
+</view> -->
 <view class="btn">
-  <van-button type="primary" block bind:click="submit">在线订座</van-button>
+  <van-button type="primary" block bind:click="submit">立即签约</van-button>
 </view>
-<view class="profile">座位预留半小时，逾期作废</view>
+<!-- <view class="profile">座位预留半小时，逾期作废</view> -->
 
 
-<van-popup
+<!-- <van-popup
   show="{{ showDatetimePop }}"
   position="bottom"
   bind:close="onClose">
   <van-datetime-picker
-    type="datetime"
+    type="datetime"  
     value="{{ currentDate }}"
     min-date="{{ minDate }}"
     formatter="{{ formatter }}"
@@ -51,4 +102,4 @@
     bind:confirm="confirm"
     bind:cancel="hideDatetimePop"
   />
-</van-popup>
+</van-popup> -->

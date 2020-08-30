@@ -115,5 +115,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  goToSchool(){
+    wx.reLanch({
+      url: 'pages/cooperative-school/index'
+    })
   }
 })
