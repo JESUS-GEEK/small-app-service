@@ -1,4 +1,5 @@
 const WXAPI = require('apifm-wxapi')
+import Base from './base.js'
 // const Dialog = require('@vant/weapp/dialog/dialog')
 import Dialog from '@vant/weapp/dialog/dialog'
 
@@ -90,15 +91,15 @@ async function login(page){
           //_this.register(page)
           return;
         }
-        if (res.code != 0) {
-          // 登录错误
-          wx.showModal({
-            title: '无法登录',
-            content: res.msg,
-            showCancel: false
-          })
-          return;
-        }
+        // if (res.code != 0) {
+        //   // 登录错误
+        //   wx.showModal({
+        //     title: '无法登录',
+        //     content: res.msg,
+        //     showCancel: false
+        //   })
+        //   return;
+        // }
         wx.setStorageSync('token', res.data.token)
         wx.setStorageSync('uid', res.data.uid)
         if ( page ) {
@@ -188,9 +189,18 @@ async function checkAndAuthorize (scope) {
     })
   })  
 }
-
-
+async function newLogin(){
+  Base({
+    method:'post',
+    url:'/wx/auth/login_by_weixin',
+     
+  }).then((res)=>{
+    console.log(res,"res.login")
+  })
+}
+// this.newLogin();
 module.exports = {
+  newLogin:newLogin,
   checkHasLogined: checkHasLogined,
   wxaCode: wxaCode,
   getUserInfo: getUserInfo,

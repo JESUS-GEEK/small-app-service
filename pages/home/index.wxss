@@ -1,6 +1,10 @@
 /* pages/home/index.wxss */
 .container-body{
   width:90%;
+  margin:0 auto;
+}
+.swiper-box{
+  height:250px;
 }
 .add-col{
   text-align:center;

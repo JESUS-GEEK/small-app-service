@@ -18,7 +18,8 @@
     "pages/booking/index",
     "pages/asset/index",
     "pages/asset/recharge-log",
-    "pages/asset/cash-log"
+    "pages/asset/cash-log",
+    "pages/signIn/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -42,12 +43,6 @@
         "iconPath": "images/nav/index-off.png",
         "selectedIconPath": "images/nav/index-on.png",
         "text": "地图定位"
-      },
-      {
-        "pagePath": "pages/order-details/doing",
-        "iconPath": "images/nav/qc-off.png",
-        "selectedIconPath": "images/nav/qc-on.png",
-        "text": "签约"
       },
       {
         "pagePath": "pages/my/index",
@@ -88,7 +83,8 @@
     "van-search": "@vant/weapp/search/index",
     "van-collapse": "@vant/weapp/collapse/index",
     "van-collapse-item": "@vant/weapp/collapse-item/index",
-    "van-steps": "@vant/weapp/steps/index"
+    "van-steps": "@vant/weapp/steps/index",
+    "van-notice-bar": "@vant/weapp/notice-bar/index"
   },
   "sitemapLocation": "sitemap.json"
 }

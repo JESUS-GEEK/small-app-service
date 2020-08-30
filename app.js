@@ -1,6 +1,7 @@
 const WXAPI = require('apifm-wxapi')
 const CONFIG = require('config.js')
 const AUTH = require('utils/auth')
+
 App({
   onLaunch: function() {    
     WXAPI.init(CONFIG.subDomain)
@@ -63,6 +64,7 @@ App({
         }
       }
     })
+
   },
   onShow (e) {
     // 保存邀请人
@@ -106,7 +108,9 @@ App({
         AUTH.login()
       }
     })
+   
   },
+ 
   globalData: {
     isConnected: true
   }

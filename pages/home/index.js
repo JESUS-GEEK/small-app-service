@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    images:['../../images/swiperOne.jpg','../../images/swiperTwo.jpg','../../images/swiperThree.jpg'],
+    images:['../../images/swipercars.png','../../images/swipercar.png','../../images/swiperstudent.png'],
     indicatorDots: true,
     vertical: false,
     autoplay: true,

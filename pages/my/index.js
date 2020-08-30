@@ -58,6 +58,7 @@ Page({
     }
   },
   processLogin(e) {
+    console.log(e,'e')
     if (!e.detail.userInfo) {
       wx.showToast({
         title: '已取消',
