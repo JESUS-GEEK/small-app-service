@@ -1,6 +1,6 @@
 const APP = getApp()
-const AUTH = require('../../utils/auth')
-const WXAPI = require('apifm-wxapi')
+var api = require('../../config/api.js');
+var util = require('../../utils/request.js');
 
 // fixed首次打开不显示标题的bug
 APP.configLoadOK = () => {
@@ -28,17 +28,9 @@ Page({
 
   },
   onLoad: function (options) {
-    wx.setNavigationBarTitle({
-      title: "我的签约"
-    })
   },
   onShow: function () {
 
-  },
-  changePersionNum(e) {
-    this.setData({
-      persionNumIndex: e.currentTarget.dataset.idx
-    })
   },
   onClose() {
     this.setData({ show: false });
@@ -47,7 +39,6 @@ Page({
     console.log(e,'e');
     this.setData({
       show:true,
-      // line:
     });
   },
   onSelect(event) {
@@ -59,7 +50,7 @@ Page({
   async submit() {
     if (!this.data.name) {
       wx.showToast({
-        title: '请填写姓名',
+        title: '请填写孩子姓名',
         icon: 'none'
       })
       return
@@ -71,37 +62,83 @@ Page({
       })
       return
     }
-    if (!this.data.time) {
+    if (!this.data.valueParent) {
       wx.showToast({
-        title: '请选择到店时间',
+        title: '请填写父母姓名',
         icon: 'none'
       })
       return
     }
-    const extJsonStr = {}
-    extJsonStr['姓名'] = this.data.name
-    extJsonStr['联系电话'] = this.data.mobile
-    extJsonStr['到店时间'] = this.data.time
-    extJsonStr['用餐人数'] = this.data.persionNum[this.data.persionNumIndex]
-    const res = await WXAPI.yuyueJoin({
-      token: wx.getStorageSync('token'),
-      yuyueId: wx.getStorageSync('zxdz'),
-      extJsonStr: JSON.stringify(extJsonStr)
-    })
-    if (res.code != 0) {
+    if(!this.data.address) {
       wx.showToast({
-        title: res.msg,
-        icon: 'none'
+        title:'请填写家庭地址',
+        icon:'none'
       })
-    } else {
-      wx.showToast({
-        title: '提交成功',
-        icon: 'success'
-      })
-      setTimeout(() => {
-        wx.navigateBack()
-      }, 1000);
+      return
     }
+    if(!this.data.schoolName) {
+      wx.showToast({
+        title:'请填写学校名称',
+        icon:'none'
+      })
+      return
+    }
+    if(!this.data.schoolAddress) {
+      wx.showToast({
+        title:'请填写学校地址',
+        icon:'none'
+      })
+      return
+    }
+    if(!this.data.afterClass) {
+      wx.showToast({
+        title:'请填写下课时间',
+        icon:'none'
+      })
+      return
+    }
+    if(!this.data.line) {
+      wx.showToast({
+        title:'请选择班车路线',
+        icon:'none'
+      })
+      return
+    }
+    // 提交签约信息接口
+    const extJsonStr = {}
+    extJsonStr['孩子姓名'] = this.data.name
+    extJsonStr['联系电话'] = this.data.mobile
+    extJsonStr['父母姓名'] = this.data.valueParent
+    extJsonStr['家庭住址'] = this.data.address
+    extJsonStr['学校名称'] = this.data.schoolName
+    extJsonStr['学校地址'] = this.data.schoolAddress
+    extJsonStr['下课时间'] = this.data.afterClass
+    extJsonStr['班车路线'] = this.data.line
+    
+    // const res = await WXAPI.yuyueJoin({
+    //   token: wx.getStorageSync('token'),
+    //   yuyueId: wx.getStorageSync('zxdz'),
+    //   extJsonStr: JSON.stringify(extJsonStr)
+    // })
+    util.request(api.info,{
+      extJsonStr
+    },"POST").then((res) => {
+      if (res.code != 0) {
+        wx.showToast({
+          title: res.msg,
+          icon: 'none'
+        })
+      } else {
+        wx.showToast({
+          title: '提交成功',
+          icon: 'success'
+        })
+        setTimeout(() => {
+          wx.navigateBack()
+        }, 1000);
+      }
+    })
+  
   },
   showDatetimePop() {
     this.setData({

@@ -65,6 +65,6 @@
   <view class=''>日期开始：{{min}} </view>
   <view class=''>日期结束：{{max}} </view>
   <view class=''>签到数：{{signNum}}天</view>
-  <view class=''>切换周期的倍数：{{be}}</view>
+  <view class=''>签到积分：{{signScore}}</view>
 </view>
 

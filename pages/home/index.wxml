@@ -20,17 +20,23 @@
 	<view style="margin-top:20px;">
 	<van-row >
 		<van-col class="add-col" span="8" >
-			<image style="width:30%;height:32px;margin-left:35%" src="../../images/ds.png" is-link url="pages/cooperative-school/index"/>
+				<navigator  is-link url="/pages/cooperative-school/index" open-type="redirect">
+				<image style="width:30%;height:32px;margin-left:35%" src="../../images/ds.png"/>
+				</navigator >
 		</van-col>
 		<van-col class="add-col" span="8">
+		<navigator is-link url="/pages/school-bus/index" open-type="redirect">
 			<image style="width:30%;height:32px;margin-left:35%" src="../../images/hz.png" />
+			</navigator>
 		</van-col>
 		<van-col class="add-col" span="8">
+			<navigator is-link url="/pages/car-info/index" open-type="redirect">
 			<image style="width:30%;height:32px;margin-left:35%" src="../../images/mz.png" />
+			</navigator>
 		</van-col>
 	</van-row>
-	<view style="margin-top:10px;">
-	<van-row style="margin-top:10px;">
+	<view >
+	<van-row >
 		<van-col class="add-col" span="8"  >
 			<navigator  is-link url="/pages/cooperative-school/index" open-type="redirect">合作学校</navigator >
 		</van-col>
@@ -52,7 +58,9 @@
 			<image style="width:30%;height:32px;margin-left:35%" src="../../images/yq.png" />
 		</van-col>
 		<van-col class="add-col" span="8">
-			<image style="width:30%;height:32px;margin-left:35%" src="../../images/zy.png" />
+			<navigator is-link url="/pages/about-us/index" open-type="redirect">
+				<image style="width:30%;height:32px;margin-left:35%" src="../../images/zy.png" />
+			</navigator>
 		</van-col>
 	</van-row>
 	<van-row>
@@ -89,4 +97,5 @@
 			</view>
 		</van-card>
 	</view>-->
+
 </view> 

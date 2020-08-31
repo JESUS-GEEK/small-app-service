@@ -11,7 +11,8 @@ Page({
     //img_url: config.imgUrl, //图片地址
 
     //签到模块
-    signNum: 1,  //签到数 
+    signNum: 1,  //签到数
+    signScore:0, 
     signState: false, //签到状态
     min: 1,  //默认值日期第一天1
     max: 7,  //默认值日期最后一天7
@@ -41,13 +42,12 @@ Page({
     //接收后端数据
    this.getSignInfo();
   },
+  // 查询签到
   getSignInfo(e){
     let that = this;
-    let shareUserId = wx.getStorageSync('shareUserId');
-console.log(e,shareUserId,'this.data')
     util.request(
-      api.signIn,{
-        userId:'',
+      api.querySignIn,{
+        userId:wx.getStorageSync('openId'),
       },"GET"
       // data: {
       //   id:this.data.uInfo.id
@@ -64,7 +64,11 @@ console.log(e,shareUserId,'this.data')
       //   console.log("连接失败")
       // }
     ).then((res)=>{
-      console.log(res,'res')
+         that.setData({
+          signNum: res.data.signDay,
+          signScore:res.data.signScore,
+          min: res.data.signDay //接收到的数据，页面调用的是这里的数据
+        })
     })
 
   },
@@ -74,50 +78,85 @@ console.log(e,shareUserId,'this.data')
     var that = this,
       num = e.currentTarget.dataset.num;
       num++
-    app.ajax({
-      url: "Signin|sign",
-      data: {
-        id: this.data.uInfo.id
-      },
-      success: function (res) {
-
+      console.log(num,e.currentTarget.dataset,'num');
+      util.request(api.signIn,{
+           userId:wx.getStorageSync('openId'),
+      },"GET").then(res=>{
+        if(res.errno== -2){
+          wx.showToast({
+            title: res.errmsg,
+            icon:'none',
+          })
+          return
+        }else{
+          that.setData({
+            signNum: num,
+            // signState: false //点击后是否继续允许点击，true为不允许，false为允许，正式使用时应为true
+          })
+          wx.showToast({
+            title: res.data,
+            icon: 'success'
+          })
+          this.getSignInfo();
+           var min = e.currentTarget.dataset.min,
+            max = e.currentTarget.dataset.max,
+            be = e.currentTarget.dataset.be;
+  
+          if (num % 7 == 0) {
+            be += 1;
             that.setData({
-              signNum: num,
-              // signState: false //点击后是否继续允许点击，true为不允许，false为允许，正式使用时应为true
+              be: be
             })
-             var min = e.currentTarget.dataset.min,
-              max = e.currentTarget.dataset.max,
-              be = e.currentTarget.dataset.be;
+          }
+  
+          if (num == 7 * be + 1) {
+            that.setData({
+              min: 7 * be + 1,
+              max: 7 * be + 7
+            })
+          }
+        
+        }
+      })
+      // success: function (res) {
 
-            if (num % 7 == 0) {
-              be += 1;
-              that.setData({
-                be: be
-              })
-            }
+      //       that.setData({
+      //         signNum: num,
+      //         // signState: false //点击后是否继续允许点击，true为不允许，false为允许，正式使用时应为true
+      //       })
+      //        var min = e.currentTarget.dataset.min,
+      //         max = e.currentTarget.dataset.max,
+      //         be = e.currentTarget.dataset.be;
 
-            if (num == 7 * be + 1) {
-              that.setData({
-                min: 7 * be + 1,
-                max: 7 * be + 7
-              })
-            }
+      //       if (num % 7 == 0) {
+      //         be += 1;
+      //         that.setData({
+      //           be: be
+      //         })
+      //       }
 
-        // wx.showToast({
-        //   icon: 'success',
-        //   title: res.msg,
-        // })
+      //       if (num == 7 * be + 1) {
+      //         that.setData({
+      //           min: 7 * be + 1,
+      //           max: 7 * be + 7
+      //         })
+      //       }
 
-        console.log('连接成功1')
-        that.setData({
-          // signNum: res.data,
-          // min: res.data, //接收到的数据，页面调用的是这里的数据
-          // signState: res.data//点击后是否继续允许点击，true为不允许，false为允许，正式使用时应为true
-        })
-      },
+      //   // wx.showToast({
+      //   //   icon: 'success',
+      //   //   title: res.msg,
+      //   // })
+
+      //   console.log('连接成功1')
+      //   that.setData({
+      //     // signNum: res.data,
+      //     // min: res.data, //接收到的数据，页面调用的是这里的数据
+      //     // signState: res.data//点击后是否继续允许点击，true为不允许，false为允许，正式使用时应为true
+      //   })
+      // },
       // fail: function (res) {
       //   console.log("连接失败")
       // }
-    })
+    // })
   },
 })

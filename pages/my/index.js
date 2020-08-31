@@ -87,7 +87,10 @@ Page({
         console.log(e.detail.userInfo.nickName)
         user.loginByWeixin(e.detail.userInfo).then(res => {
           APP.globalData.hasLogin = true;
-  
+            //存储用户信息
+          wx.setStorageSync('userInfo', res.data.userInfo);
+          wx.setStorageSync('token', res.data.token);
+          wx.setStorageSync('openId', res.data.openId);
           // wx.navigateBack({
           //   delta: 1
           // })
