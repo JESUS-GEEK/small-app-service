@@ -1,6 +1,6 @@
 <!--pages/cooperative-school/index.wxml-->
 <view>
-<view class="title">合作学校</view>
+<!-- <view class="title">合作学校</view> -->
 <van-card
   
   desc="我公司与一六八中学简历良好的合作关系,目前与我司合作的学生有100余人。"

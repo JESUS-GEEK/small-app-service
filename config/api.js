@@ -1,4 +1,4 @@
-var WxApiRoot = 'http://127.0.0.1:8070/demo/wx/';
+var WxApiRoot = 'http://146.56.203.51:8070/demo/wx/';
 // 测试环境部署api地址
 // var WxApiRoot = 'http://192.168.0.101:8070/wx/';
 // 线上云平台api地址

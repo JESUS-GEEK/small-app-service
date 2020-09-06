@@ -28,6 +28,9 @@ Page({
 
   },
   onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: "我要报名"
+    })
   },
   onShow: function () {
 

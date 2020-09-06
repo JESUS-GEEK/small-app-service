@@ -13,6 +13,7 @@ Page({
       nickName: '点击登录',
       avatarUrl: '/static/images/avatar.png'
     },
+    myBg:'../../images/bg02.jpg',
     hasLogin: false,
     couponStatistics: {
       canUse: 0
@@ -22,14 +23,22 @@ Page({
   onLoad() {
     const order_hx_uids = wx.getStorageSync('order_hx_uids')
     this.setData({
-      myBg: wx.getStorageSync('myBg'),
+      // myBgmyBg: wx.getStorageSync('myBg'),
       version: CONFIG.version,
       order_hx_uids
     })
   },
   onShow() {
      //获取用户的登录信息
-   console.log(APP.globalData,'APP.globalData')
+   console.log(APP,'APP.globalData');
+   if(wx.getStorageSync('openId')) {
+    let userInfo = wx.getStorageSync('userInfo');
+      console.log(userInfo,'userInfo')
+      this.setData({
+        userInfo: userInfo,
+        hasLogin: true
+      });
+   }
     //  if (APP.globalData.hasLogin) {
     //   let userInfo = wx.getStorageSync('userInfo');
     //   console.log(userInfo,'userInfo')
@@ -39,33 +48,7 @@ Page({
     //   });
     // }
   },
-  // async getUserApiInfo() {
-  //   const res = await WXAPI.userDetail(wx.getStorageSync('token'))
-  //   if (res.code == 0) {
-  //     const _data = {}
-  //     _data.apiUserInfoMap = res.data
-  //     if (this.data.order_hx_uids && this.data.order_hx_uids.indexOf(res.data.base.id) != -1) {
-  //       _data.canHX = true // 具有扫码核销的权限
-  //     }
-  //     this.setData(_data)
-  //   }
-  // },
-  async couponStatistics() {
-    const res = await WXAPI.couponStatistics(wx.getStorageSync('token'))
-    if (res.code == 0) {
-      this.setData({
-        couponStatistics: res.data
-      })
-    }
-  },
-  async getUserAmount() {
-    const res = await WXAPI.userAmount(wx.getStorageSync('token'))
-    if (res.code == 0) {
-      this.setData({
-        balance: res.data.balance
-      })
-    }
-  },
+ 
   processLogin(e) {
     console.log(e,'e')
     if (!e.detail.userInfo) {
@@ -86,16 +69,17 @@ Page({
        }
         console.log(e.detail.userInfo.nickName)
         user.loginByWeixin(e.detail.userInfo).then(res => {
-          APP.globalData.hasLogin = true;
+          // APP.globalData.hasLogin = true;
             //存储用户信息
           wx.setStorageSync('userInfo', res.data.userInfo);
           wx.setStorageSync('token', res.data.token);
           wx.setStorageSync('openId', res.data.openId);
+          wx.setStorageSync('hasLogin', true);
           // wx.navigateBack({
           //   delta: 1
           // })
         }).catch((err) => {
-          APP.globalData.hasLogin = false;
+          wx.setStorageSync('hasLogin', false);
           // util.showErrorToast('微信登录失败');
         });
   

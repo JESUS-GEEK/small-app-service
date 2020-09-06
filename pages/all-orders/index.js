@@ -1,5 +1,4 @@
 const wxpay = require('../../utils/pay.js')
-const WXAPI = require('apifm-wxapi')
 const AUTH = require('../../utils/auth')
 const APP = getApp()
 APP.configLoadOK = () => {
@@ -30,7 +29,9 @@ Page({
   },
  
   onLoad: function(options) {
-    
+    wx.setNavigationBarTitle({
+      title: "我的班车"
+    })
   },
   onShow: function() {
     

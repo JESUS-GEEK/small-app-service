@@ -1,4 +1,4 @@
-// pages/us/index.js
+// pages/contract/index.js
 Page({
 
   /**
@@ -13,13 +13,10 @@ Page({
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: "在线咨询"
+      title: "我的签约"
     })
   },
-  handleContact (e) {
-    console.log(e.detail.path)
-    console.log(e.detail.query)
-},
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

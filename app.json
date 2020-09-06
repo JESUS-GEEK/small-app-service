@@ -25,7 +25,8 @@
     "pages/school-bus/index",
     "pages/car-info/index",
     "pages/us/index",
-    "pages/about-us/index"
+    "pages/about-us/index",
+    "pages/contract/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -94,7 +95,6 @@
     "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
     "van-dropdown-item": "@vant/weapp/dropdown-item/index",
     "van-action-sheet": "@vant/weapp/action-sheet/index"
- 
   },
   "sitemapLocation": "sitemap.json"
 }

@@ -1,6 +1,6 @@
 <!--pages/school-bus/index.wxml车辆信息-->
 <view >
-<view class="title">班车信息</view>
+<!-- <view class="title">班车信息</view> -->
 <view class="main-box">
 <van-row class="row-box">
   <van-col span="8">班车线路：</van-col>

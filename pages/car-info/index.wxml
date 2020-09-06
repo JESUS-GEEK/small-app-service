@@ -1,6 +1,6 @@
 <!--pages/car-info/index.wxml班车线路-->
 <view >
-<view class="title">班车线路</view>
+<!-- <view class="title">班车线路</view> -->
 <van-divider/>
 <view class="main-box">
 <van-row class="row-box">

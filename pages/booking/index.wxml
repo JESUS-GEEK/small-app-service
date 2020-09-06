@@ -84,7 +84,7 @@ title="班车线路"
   </view>
 </view> -->
 <view class="btn">
-  <van-button type="primary" block bind:click="submit">立即签约</van-button>
+  <van-button type="primary" block bind:click="submit">立即报名</van-button>
 </view>
 <!-- <view class="profile">座位预留半小时，逾期作废</view> -->
 

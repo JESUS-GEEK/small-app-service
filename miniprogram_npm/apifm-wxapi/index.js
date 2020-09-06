@@ -296,19 +296,19 @@ module.exports = (_module$exports = {
   alipay: function alipay(data) {
     return request('/pay/alipay/semiAutomatic/payurl', true, 'post', data);
   },
-  login_wx: function login_wx(code) {
-    return request('/user/wxapp/login', true, 'post', {
-      code: code,
-      type: 2
-    });
-  },
-  loginWxaMobile: function loginWxaMobile(code, encryptedData, iv) {
-    return request('/user/wxapp/login/mobile', true, 'post', {
-      code: code,
-      encryptedData: encryptedData,
-      iv: iv
-    });
-  },
+  // login_wx: function login_wx(code) {
+  //   return request('/user/wxapp/login', true, 'post', {
+  //     code: code,
+  //     type: 2
+  //   });
+  // },
+  // loginWxaMobile: function loginWxaMobile(code, encryptedData, iv) {
+  //   return request('/user/wxapp/login/mobile', true, 'post', {
+  //     code: code,
+  //     encryptedData: encryptedData,
+  //     iv: iv
+  //   });
+  // },
   login_username: function login_username(data) {
     return request('/user/username/login', true, 'post', data);
   },

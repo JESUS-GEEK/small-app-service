@@ -32,7 +32,7 @@
 	<van-cell icon="medal-o" title="每日签到" size="large" is-link url="/pages/signIn/index" />
 	<van-cell icon="clock-o" title="我的班车" size="large" is-link url="/pages/all-orders/index" />
 	<!-- <van-cell icon="gold-coin-o" title="意见箱" size="large" is-link url="/pages/youhui-pay/index" /> -->
-	<van-cell icon="orders-o" title="我的签约" size="large" is-link url="/pages/booking/index" />
+	<van-cell icon="orders-o" title="我的签约" size="large" is-link url="/pages/contract/index" />
 	<van-cell icon="location-o" title="个人信息" size="large" is-link url="/pages/ad/index" />
 	<!-- <van-cell icon="info-o" title="支付功能" size="large" is-link url="/pages/about/index" /> -->
 </view>

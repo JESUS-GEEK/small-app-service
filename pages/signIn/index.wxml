@@ -2,14 +2,22 @@
 <view class='signIn'>
   <view class='sign-com'>
     <view class='thead'>
-      <view class='tt'>您已连续签到</view>
+      
         <view class='mm'>
+       您已连续签到：
           <label class='n'>
             {{signNum}}
           </label>
             天
-        </view>  
-      <view class='pp'>连续签到7日后每日得3分</view>
+        </view> 
+        <view class='mm' style="margin-top:20px;">签到积分：
+        <!-- {{signScore}}分 -->
+         <label class='n'>
+            {{signScore}}
+          </label>
+            分
+        </view> 
+      
     </view>
     <view class='modle'>
         <view class='mol'>
@@ -62,9 +70,10 @@
 </view>
 
 <view class='explax'>
-  <view class=''>日期开始：{{min}} </view>
-  <view class=''>日期结束：{{max}} </view>
+  <!-- <view class=''>日期开始：{{min}} </view>
+  <view class=''>日期结束：{{max}} </view> -->
   <view class=''>签到数：{{signNum}}天</view>
-  <view class=''>签到积分：{{signScore}}</view>
+  <view class=''>签到积分：{{signScore}}分</view>
+  <view class='pp'>连续签到7日后每日得3分</view>
 </view>
 

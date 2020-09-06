@@ -1,6 +1,6 @@
 <!--pages/about-us/index.wxml关于我们-->
 <view>
-<view class="title">关于我们</view>
+<!-- <view class="title">关于我们</view> -->
 <van-divider/>
 <view class="main-box">
 <van-row class="row-box">
