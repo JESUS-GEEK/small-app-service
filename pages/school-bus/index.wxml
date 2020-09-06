@@ -8,11 +8,11 @@
 </van-row>
 <van-row class="row-box">
   <van-col span="8">司机姓名：</van-col>
-  <van-col span="16">石金普</van-col> 
+  <van-col span="16">张三</van-col> 
 </van-row>
 <van-row class="row-box">
   <van-col span="8">司机电话：</van-col>
-  <van-col span="16">13329061556</van-col> 
+  <van-col span="16">13325555555</van-col> 
 </van-row>
 <van-row class="row-box">
   <van-col span="8">学生人数：</van-col>
@@ -29,11 +29,11 @@
 </van-row>
 <van-row class="row-box">
   <van-col span="8">司机姓名：</van-col>
-  <van-col span="16">石金普</van-col> 
+  <van-col span="16">张三</van-col> 
 </van-row>
 <van-row class="row-box">
   <van-col span="8">司机电话：</van-col>
-  <van-col span="16">13329061556</van-col> 
+  <van-col span="16">13325555555</van-col> 
 </van-row>
 <van-row class="row-box">
   <van-col span="8">学生人数：</van-col>
@@ -50,11 +50,11 @@
 </van-row>
 <van-row class="row-box">
   <van-col span="8">司机姓名：</van-col>
-  <van-col span="16">石金普</van-col> 
+  <van-col span="16">张三</van-col> 
 </van-row>
 <van-row class="row-box">
   <van-col span="8">司机电话：</van-col>
-  <van-col span="16">13329061556</van-col> 
+  <van-col span="16">13325555555</van-col> 
 </van-row>
 <van-row class="row-box">
   <van-col span="8">学生人数：</van-col>
@@ -67,11 +67,11 @@
 </van-row>
 <van-row class="row-box">
   <van-col span="8">司机姓名：</van-col>
-  <van-col span="16">石金普</van-col> 
+  <van-col span="16">张三</van-col> 
 </van-row>
 <van-row class="row-box">
   <van-col span="8">司机电话：</van-col>
-  <van-col span="16">13329061556</van-col> 
+  <van-col span="16">13325555555</van-col> 
 </van-row>
 <van-row class="row-box">
   <van-col span="8">学生人数：</van-col>
