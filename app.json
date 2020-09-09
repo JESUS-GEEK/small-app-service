@@ -26,12 +26,13 @@
     "pages/car-info/index",
     "pages/us/index",
     "pages/about-us/index",
-    "pages/contract/index"
+    "pages/contract/index",
+    "pages/navigationBar/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationStyle": "custom",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

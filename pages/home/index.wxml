@@ -1,95 +1,117 @@
 <!--pages/home/index.wxml-->
 <view class="container-body">
-	<!-- <van-search value="{{ value }}" placeholder="请输入班车查询" shape="round" /> -->
-	<!-- swiper -->
-	<view class="swiper-box">
-	<view class="page-section page-section-spacing swiper">
-		<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:220px;">
-			<block wx:for="{{images}}" wx:key="*this" style="height:200px;border:1px solid #afa">
-				<swiper-item>
-					<view class="swiper-item">
-						<image src="{{item}}" style="width:100%;" />
-					</view>
-				</swiper-item>
-			</block>
-		</swiper>
+<view class="navigation-container" style="{{'height: ' + navigationBarAndStatusBarHeight}}">
+    <!--空白来占位状态栏-->
+    <view style="{{'height: ' + statusBarHeight}}"></view>
+    <!--自定义导航栏-->
+    <view class="navigation-bar" style="{{'height:' + navigationBarHeight}}">
+        <view class="navigation-buttons" style="{{'height:' + menuButtonHeight}}">
+            <!-- <image class="nav-img" src='/images/back.svg'/>
+            ...其余自定义button -->
+            <van-icon name="contact" size="26" />
+        </view> 
+        <view class="navigation-title" style="{{'line-height:' + navigationBarHeight}}">{{title}}</view>
+    </view>    
+</view>
+<!--空白占位fixed空出的位置-->
+<view style="{{'height: ' + navigationBarAndStatusBarHeight}}; background: #ffffff"></view>
+<!-- ========= -->
+<map id="map" class="maMap" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}"  polyline="{{polyline}}" show-location enable-3D	show-compass show-scale	enable-rotate	enable-traffic >
+</map>
+<view class="bottom-box">
+	<van-tabs active="{{ active }}" animated>
+  <van-tab title="小型面包">
+	<view style="display:inline-block"><image class="car-box" src="../../images/car.jpg"/></view>
+	<view class="car-info">
+	<view class="car-info-item">载重0.6吨</view>
+	<view class="car-info-item">长宽高：1.7*1.1*1m</view>
+	<view class="car-info-item">容积：1.87方</view>
 	</view>
+	</van-tab>
+  <van-tab title="中型面包">
+	<view style="display:inline-block"><image class="car-box" src="../../images/car.jpg"/></view>
+	<view class="car-info">
+	<view class="car-info-item">载重0.6吨</view>
+	<view class="car-info-item">长宽高：1.7*1.1*1m</view>
+	<view class="car-info-item">容积：1.87方</view>
 	</view>
-	<van-notice-bar style="width:100%;height:50px;" left-icon="volume-o" speed="30" text="云租接送，城市共享班车平台，提供稳定便捷的上下班接送服务。" backgroundColor="#fff">
-	</van-notice-bar>
-	<!-- <view style="margin-top:20px;">
-	</view> -->
-	<!-- <view style="margin-top:20px"></view> -->
+	</van-tab>
+  <van-tab title="小货车">
+	<view style="display:inline-block"><image class="car-box" src="../../images/car.jpg"/></view>
+	<view class="car-info">
+	<view class="car-info-item">载重0.6吨</view>
+	<view class="car-info-item">长宽高：1.7*1.1*1m</view>
+	<view class="car-info-item">容积：1.87方</view>
+	</view>
+	</van-tab>
+  <van-tab title="中货车">
+	<view style="display:inline-block"><image class="car-box" src="../../images/car.jpg"/></view>
+	<view class="car-info">
+	<view class="car-info-item">载重0.6吨</view>
+	<view class="car-info-item">长宽高：1.7*1.1*1m</view>
+	<view class="car-info-item">容积：1.87方</view>
+	</view>
+	</van-tab>
+  <van-tab title="5米2">
+	<view style="display:inline-block"><image class="car-box" src="../../images/car.jpg"/></view>
+	<view class="car-info">
+	<view class="car-info-item">载重0.6吨</view>
+	<view class="car-info-item">长宽高：1.7*1.1*1m</view>
+	<view class="car-info-item">容积：1.87方</view>
+	</view>
+	</van-tab>
+  <van-tab title="5米8">
+	<view style="display:inline-block"><image class="car-box" src="../../images/car.jpg"/></view>
+	<view class="car-info">
+	<view class="car-info-item">载重0.6吨</view>
+	<view class="car-info-item">长宽高：1.7*1.1*1m</view>
+	<view class="car-info-item">容积：1.87方</view>
+	</view>
+	</van-tab>
+  <van-tab title="6米2">
+	<view style="display:inline-block"><image class="car-box" src="../../images/car.jpg"/></view>
+	<view class="car-info">
+	<view class="car-info-item">载重0.6吨</view>
+	<view class="car-info-item">长宽高：1.7*1.1*1m</view>
+	<view class="car-info-item">容积：1.87方</view>
+	</view>
+	</van-tab>
+  <van-tab title="6米8">
+	<view style="display:inline-block"><image class="car-box" src="../../images/car.jpg"/></view>
+	<view class="car-info">
+	<view class="car-info-item">载重0.6吨</view>
+	<view class="car-info-item">长宽高：1.7*1.1*1m</view>
+	<view class="car-info-item">容积：1.87方</view>
+	</view>
+	</van-tab>
+</van-tabs>
+<!-- <van-divider/> -->
+<view class="address-box">
 	<view>
-		<view class="row-box">
-					<view class="item-box" style="  margin-right:5%;">
-					<navigator  is-link url="/pages/cooperative-school/index" open-type="redirect">
-					<view><image style="width:32px;height:32px;margin:0 auto;margin-top:20px;" src="../../images/school.png" /></view>
-					<view style="margin:0 auto;text-align:center;line-height:40px;">合作学校</view>
-					</navigator>
-					</view>
-					<view class="item-box" style="  margin-right:5%;">
-					<navigator is-link url="/pages/school-bus/index" open-type="redirect">
-					<view><image style="width:32px;height:32px;margin:0 auto;margin-top:20px;" src="../../images/bus.png" /></view>
-					<view style="margin:0 auto;text-align:center;line-height:40px;">车辆信息</view>
-					</navigator>
-					</view>
-					<view class="item-box">
-					<navigator is-link url="/pages/car-info/index" open-type="redirect">
-					<view><image style="width:32px;height:32px;margin:0 auto;margin-top:20px;" src="../../images/line.png" /></view>
-					<view style="margin:0 auto;text-align:center;line-height:40px;">班车线路</view>
-					</navigator>
-					</view>
-			</view>
-			<view class="row-box">
-					<view class="item-box" style="  margin-right:5%;">
-					<navigator is-link url="/pages/booking/index" open-type="redirect">
-					<view><image style="width:32px;height:32px;margin:0 auto;margin-top:20px;" src="../../images/signup.png" /></view>
-					<view style="margin:0 auto;text-align:center;line-height:40px;">我要报名</view>
-				</navigator>
-					</view>
-					<view class="item-box" style="  margin-right:5%;">
-					<navigator is-link url="/pages/us/index" open-type="redirect">
-					<view><image style="width:32px;height:32px;margin:0 auto;margin-top:20px;" src="../../images/consult.png" /></view>
-					<view style="margin:0 auto;text-align:center;line-height:40px;">在线咨询</view>
-					</navigator>
-					</view>
-					<view class="item-box">
-					<navigator is-link url="/pages/about-us/index" open-type="redirect">
-					<view><image style="width:32px;height:32px;margin:0 auto;margin-top:20px;" src="../../images/us.png" /></view>
-					<view style="margin:0 auto;text-align:center;line-height:40px;">关于我们</view>
-					</navigator>
-					</view>
-			</view>
-	</view>
-	 <!-- <view> -->
-		<view class="order">
-			<text class="line"></text>
-			<text class="txt">动态</text>
-			<text class="line"></text>
-		</view>
-		<view class="pic-box">
-			<image style="width:100%;height:100%" src="../../images/buttom05.jpg"/>
-		</view>
-		<view class="pic-box">
-			<image style="width:100%;height:100%" src="../../images/buttom02.jpg"/>
-		</view>
-		<!--<van-card num="2" price="10.00" origin-price="10.00" desc="月卡优惠" title="月卡" tag="hot" thumb="/images/vip.jpg" />
+	<van-icon name="add-o" />
+	<van-cell-group style="display:inline-block;width:90%">
+  <van-field
+    model:value="{{ value }}"
+    placeholder="请输入发货地址"
+    border="{{ false }}"
+  />
+</van-cell-group>
 	</view>
 	<view>
-		<view class="order">
-			<text class="line"></text>
-			<text class="txt">限时秒杀</text>
-			<text class="line"></text>
-		</view>
-		<van-card price="9.9" origin-price="10.00" desc="活动多多，欢迎参加与，更多活动，可电话咨询" tag="hot" thumb="/images/vip.jpg">
-			<view slot="price-top">
-				<view class="footer-timeout"><text>剩余：{{countDownDay}}天\t{{countDownHour}}\t时\t{{countDownMinute}}\t分\t{{countDownSecond}}\t秒</text></view>
-			</view>
-			<view slot="footer">
-				<van-button type="danger" size="small">立即抢购</van-button>
-			</view>
-		</van-card>
-	</view>-->
+	<van-icon name="add-o" />
+	<van-cell-group style="display:inline-block;width:90%">
+  <van-field
+    model:value="{{ value }}"
+    placeholder="请输入收货地址"
+    border="{{ false }}"
+  />
+</van-cell-group>
+	</view>
+	<view class="next-btn">
+	<van-button   color="#f08f92;">下一步</van-button>
+	</view>
+	
+</view>
+</view>
 
 </view> 
