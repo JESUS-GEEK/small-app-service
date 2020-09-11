@@ -1,1 +1,42 @@
 /* pages/contract/index.wxss */
+.bottom-box{
+  width:96%;
+  margin:0 auto;
+  /* border:1px solid #afa; */
+}
+.car-box{
+  width:300rpx;
+  height:200rpx;
+  margin-left:60rpx;
+}
+.car-info{
+  display:inline-block;
+  margin-left:30rpx;
+  font-size:15px;
+  color:#999;
+  vertical-align:top;
+  margin-top:40rpx;
+  
+}
+.car-info-item{
+  margin-top:10rpx;
+}
+.charge-box{
+  width:95%;
+  margin:0 auto;
+  margin-bottom:50rpx;
+
+}
+.charge-box .van-tab{
+  font-size:30rpx !important; 
+}
+.charge-box .van-tabs__line{
+  width:150rpx !important;
+  margin-left:-25rpx;
+}
+.charge-box .van-ellipsis{
+  width:180rpx !important;
+}
+.charge-info{
+  margin-top:40rpx;
+}

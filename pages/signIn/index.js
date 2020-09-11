@@ -17,6 +17,9 @@ Page({
     min: 1,  //默认值日期第一天1
     max: 7,  //默认值日期最后一天7
     be: 0,  //默认倍数
+    navigationBarTitle:'签到中心',
+    contact:"arrow-left",
+    urls:'/pages/my/index'
   },
 
   /**

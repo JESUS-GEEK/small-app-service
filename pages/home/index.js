@@ -5,18 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // 状态栏高度
-    statusBarHeight: wx.getStorageSync('statusBarHeight') + 'px',
-    // 导航栏高度
-    navigationBarHeight: wx.getStorageSync('navigationBarHeight') + 'px',
-    // 胶囊按钮高度
-    menuButtonHeight: wx.getStorageSync('menuButtonHeight') + 'px',
-    // 导航栏和状态栏高度
-    navigationBarAndStatusBarHeight:
-      wx.getStorageSync('statusBarHeight') +
-      wx.getStorageSync('navigationBarHeight') +
-      'px',
-      title:"云租企服",
+    
     images:['../../images/buttom05.jpg','../../images/buttom02.jpg','../../images/swiperstudent.png'],
     indicatorDots: true,
     vertical: false,
@@ -36,7 +25,10 @@ Page({
       height: 50,
      
     }],
-    active: 0
+    active: 0,
+    navigationBarTitle:'云租企服',
+    contact:"contact",
+    urls:'/pages/my/index'
   },
 
   /**

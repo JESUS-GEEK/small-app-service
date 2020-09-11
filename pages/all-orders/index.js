@@ -6,34 +6,23 @@ APP.configLoadOK = () => {
 }
 Page({
   data: {
-    activeName: [],
-    steps: [
-      {
-        text: '中国声谷',
-        desc: '17:40:00',
-      },
-      {
-        text: '创新产业园',
-        desc: '18:00:00',
-      },
-      {
-        text: '枫丹白露湖公馆',
-        desc: '18:10:10',
-      },
-      {
-        text: '国购广场',
-        desc: '18:30:10',
-      },
-    ],
-    activeStep:1,
+    
+    activeOrder:0,
+    navigationBarTitle:'我的订单',
+    contact:"arrow-left",
+    urls:'/pages/my/index'
   },
  
   onLoad: function(options) {
-    wx.setNavigationBarTitle({
-      title: "我的班车"
-    })
+ 
   },
   onShow: function() {
     
+  },
+  onChange(event) {
+    wx.showToast({
+      title: `切换到标签 ${event.detail.name}`,
+      icon: 'none',
+    });
   },
 })

@@ -1,6 +1,6 @@
 // pages/navigationBar/index.js
-Page({
-
+Component({
+  
   /**
    * 页面的初始数据
    */
@@ -16,7 +16,8 @@ Page({
        wx.getStorageSync('statusBarHeight') +
        wx.getStorageSync('navigationBarHeight') +
        'px',
-       title:"云租企服"
+       title:"云租企服",
+       url:''
 
   },
   
@@ -44,15 +45,29 @@ Page({
     title:{
       type:String,
       observer: function(newVal, oldVal) {
-        this.updateRate()		//这里通过this.updateRate()方法来更新数据
+        this.setData({
+          title:this.data.title
+        })
+      }
+    },
+    types:{
+      type:String,
+      observer:function(){
+        this.setData({
+          types:this.data.types
+        })
+      }
+    },
+    url:{
+      type:String,
+      observer:function(){
+        this.setData({
+          url:this.data.url
+        })
       }
     }
   },
-  updateRate:function(){
-    this.setData({
-      title:this.data.title
-    })
-  },
+  
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -66,6 +81,14 @@ Page({
   onUnload: function () {
 
   },
+ methods:{
+  navBack:function(){
+    // wx.navigateBack()
+    wx.switchTab({
+      url: this.data.url,
+    })
+  },
+ },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作

@@ -1,42 +1,95 @@
 <view >
-	<!-- <view class="title">我的班车</view> -->
+  <v-navigationBar title="{{navigationBarTitle}}" types="{{contact}}" url="{{urls}}"></v-navigationBar>
 	<van-divider/>
 <view class="main-box">
-<van-row class="row-box">
-  <van-col span="8">班车线路：</van-col>
-  <van-col span="16">半岛线</van-col> 
-</van-row>
-<van-divider/>
-<van-row class="row-box">
-  <van-col span="8">司机姓名：</van-col>
-  <van-col span="16">张三</van-col> 
-</van-row>
-<van-divider/>
-<van-row class="row-box">
-  <van-col span="8">司机电话：</van-col>
-  <van-col span="16">13328282828</van-col> 
-</van-row>
-<van-divider/>
-<van-row class="row-box">
-  <van-col span="8">学生人数：</van-col>
-  <van-col span="16">20人</van-col> 
-</van-row>
-<van-divider/>
-<van-row class="row-box">
-  <van-col span="8">班车线路：</van-col>
-  <van-col span="16">半岛线</van-col> 
-</van-row>
-<van-divider/>
-<van-row class="row-box">
-  <!-- <van-col span="7">线路详情：</van-col>
-      <van-col span="17">  -->
-       <van-steps
-      steps="{{ steps }}"
-      active="{{ activeStep }}"
-      active-color="#07c160"
-    />
-    <!-- </van-col>  -->
-</van-row>
+  <van-tabs active="{{ activeOrder }}" bind:change="onChange">
+  <van-tab title="全部" style="width:80px;">
+    <view class="item-box">
+    <view class="items">
+      <view> <text>时间：2020-10-10 10:10</text><text class="status">已完成</text></view>
+      <van-divider/>
+      <view><image  class="order-pic" src="../../images/ic-businesswoman.png"/>
+      <view class="driver-info">
+      <text class="driver-name">张小鱼儿</text>
+      <text class="service">为您服务</text>
+      </view>
+      </view>
+      <van-divider/>
+      <view><van-icon name="circle" color="#59ba8c"/> <text style="padding-left:20rpx;">中国智慧产业园一期</text></view>
+      <view style="margin-top:20rpx;"><van-icon name="circle" color="red"/> <text style="padding-left:20rpx;">国购广场之心城</text></view>
+      <van-divider/>
+      <view>预估价格：￥64</view>
+      <view>        
+      </view>
+    </view>
+    </view>
+     <view class="item-box">
+    <view class="items">
+      <view> <text>时间：2020-10-10 10:10</text><text class="status">已取消</text></view>
+      <van-divider/>
+      <view><image  class="order-pic" src="../../images/manager.png"/>
+      <view class="driver-info">
+      <text class="driver-name">张小鱼儿</text>
+      <text class="service">为您服务</text>
+      </view>
+      </view>
+      <van-divider/>
+      <view><van-icon name="circle" color="#59ba8c"/> <text style="padding-left:20rpx;">中国智慧产业园一期</text></view>
+      <view style="margin-top:30rpx;"><van-icon name="circle" color="red"/> <text style="padding-left:20rpx;">国购广场之心城</text></view>
+      <van-divider/>
+      <view>预估价格：￥64</view>
+      <view>
+        
+      </view>
+    </view>
+    </view>
+    <view style="padding-top:30rpx;"></view>
+  </van-tab>
+  <van-tab title="服务中">
+    <view class="item-box">
+    <view class="items">
+      <view> <text>时间：2020-10-10 10:10</text><text class="status">服务中</text></view>
+      <van-divider/>
+      <view><image  class="order-pic" src="../../images/ic-businesswoman.png"/>
+      <view class="driver-info">
+      <text class="driver-name">张小鱼儿</text>
+      <text class="service">为您服务</text>
+      </view>
+      </view>
+      <van-divider/>
+      <view><van-icon name="circle" color="#59ba8c"/> <text style="padding-left:20rpx;">中国智慧产业园一期</text></view>
+      <view style="margin-top:20rpx;"><van-icon name="circle" color="red"/> <text style="padding-left:20rpx;">国购广场之心城</text></view>
+      <van-divider/>
+      <view>预估价格：￥64</view>
+      <view>        
+      </view>
+    </view>
+    </view>
+    <view style="padding-top:30rpx;"></view>
+  </van-tab>
+  <van-tab title="代付款">
+    <view class="item-box">
+    <view class="items">
+      <view> <text>时间：2020-10-10 10:10</text><text class="status">代付款</text></view>
+      <van-divider/>
+      <view><image  class="order-pic" src="../../images/ic-businesswoman.png"/>
+      <view class="driver-info">
+      <text class="driver-name">张小鱼儿</text>
+      <text class="service">为您服务</text>
+      </view>
+      </view>
+      <van-divider/>
+      <view><van-icon name="circle" color="#59ba8c"/> <text style="padding-left:20rpx;">中国智慧产业园一期</text></view>
+      <view style="margin-top:20rpx;"><van-icon name="circle" color="red"/> <text style="padding-left:20rpx;">国购广场之心城</text></view>
+      <van-divider/>
+      <view>预估价格：￥64</view>
+      <view>        
+      </view>
+    </view>
+    </view>
+    <view style="padding-top:30rpx;"></view>
+  </van-tab>
+</van-tabs>
 </view>
 	
 </view>

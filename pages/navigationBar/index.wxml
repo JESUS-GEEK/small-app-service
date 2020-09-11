@@ -5,9 +5,10 @@
     <!--自定义导航栏-->
     <view class="navigation-bar" style="{{'height:' + navigationBarHeight}}">
         <view class="navigation-buttons" style="{{'height:' + menuButtonHeight}}">
-            <!-- <image class="nav-img" src='/images/back.svg'/>
-            ...其余自定义button -->
-            <van-icon name="contact" size="26" />
+            <image class="nav-img" src='/images/back.svg'/>
+            <!-- ...其余自定义button -->
+            
+            <van-icon name="{{types}}"  size="26"  bindtap="navBack"/>
         </view> 
         <view class="navigation-title" style="{{'line-height:' + navigationBarHeight}}">{{title}}</view>
     </view>    

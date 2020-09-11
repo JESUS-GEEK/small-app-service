@@ -1,32 +1,54 @@
-<!--pages/contract/index.wxml-->
-<view >
-	<!-- <view class="title">我的班车</view> -->
-	<van-divider/>
-<view class="main-box">
-<van-row class="row-box">
-  <van-col span="8">班车线路：</van-col>
-  <van-col span="16">半岛线</van-col> 
-</van-row>
-<van-divider/>
-<van-row class="row-box">
-  <van-col span="8">司机姓名：</van-col>
-  <van-col span="16">张三</van-col> 
-</van-row>
-<van-divider/>
-<van-row class="row-box">
-  <van-col span="8">司机电话：</van-col>
-  <van-col span="16">13325555555</van-col> 
-</van-row>
-<van-divider/>
-<van-row class="row-box">
-  <van-col span="8">学生人数：</van-col>
-  <van-col span="16">20人</van-col> 
-</van-row>
-<van-divider/>
-<van-row class="row-box">
-  <van-col span="8">班车线路：</van-col>
-  <van-col span="16">半岛线</van-col> 
-</van-row>
+<v-navigationBar title="{{navigationBarTitle}}" types="{{contact}}" url="{{urls}}"></v-navigationBar>
+<view class="charge-box">
+	<van-tabs active="{{ active }}" animated >
+  <van-tab title="小型面包">
+	<view style="display:inline-block"><image class="car-box" src="../../images/car.jpg"/></view>
+	<view class="car-info">
+	<view class="car-info-item">载重0.6吨</view>
+	<view class="car-info-item">长宽高：1.7*1.1*1m</view>
+	<view class="car-info-item">容积：1.87方</view>
+	</view>
+	</van-tab>
+  <van-tab title="中型面包">
+	<view style="display:inline-block"><image class="car-box" src="../../images/car.jpg"/></view>
+	<view class="car-info">
+	<view class="car-info-item">载重0.6吨</view>
+	<view class="car-info-item">长宽高：1.7*1.1*1m</view>
+	<view class="car-info-item">容积：1.87方</view>
+	</view>
+	</van-tab>
+  <van-tab title="小货车">
+	<view style="display:inline-block"><image class="car-box" src="../../images/car.jpg"/></view>
+	<view class="car-info">
+	<view class="car-info-item">载重0.6吨</view>
+	<view class="car-info-item">长宽高：1.7*1.1*1m</view>
+	<view class="car-info-item">容积：1.87方</view>
+	</view>
+	</van-tab>
+  <van-tab title="中货车">
+	<view style="display:inline-block"><image class="car-box" src="../../images/car.jpg"/></view>
+	<view class="car-info">
+	<view class="car-info-item">载重0.6吨</view>
+	<view class="car-info-item">长宽高：1.7*1.1*1m</view>
+	<view class="car-info-item">容积：1.87方</view>
+	</view>
+	</van-tab> 
+</van-tabs>
+<!-- 收费详情 -->
+<view class="charge-info">
+ <van-cell title="基础费用" value="" style="font-weight:bold;" />
+<van-cell-group>
+  <van-cell title="起步价（五公里内）" value="45元" />
+  <van-cell title="里程费" value=""  style="font-weight:bold;"/>
+  <van-cell title="6-25公里" value="45元" />
+  <van-cell title="起步价（五公里内）" value="3.8元/公里" />
+  <van-cell title="起步价（五公里内）" value="3.8元/公里" />
+  <van-cell title="起步价（五公里内）" value="3.8元/公里" />
+  <van-cell title="起步价（五公里内）" value="3.8元/公里" />
+  <van-cell title="起步价（五公里内）" value="3.8元/公里" />
+  <van-cell title="免费等候时间" value="60分钟" />
+  <van-cell title="超时等候费" value="5分钟/15元" />
+
+</van-cell-group>
 </view>
-	
 </view>

@@ -1,66 +1,37 @@
-<view class="container" wx:if="{{addressList.length > 0 && addressEdit == false}}">
-  <view class="address-list">
-    <view class="a-address" wx:for="{{addressList}}" wx:key="id">
-      <view class="left-text" bindtap="selectTap" data-id="{{item.id}}">
-        <view class="name-tel">
-          {{item.linkMan}} {{item.mobile}}
-        </view>
-        <view class="address-box">
-          {{item.address}}
-        </view>
+
+<v-navigationBar title="{{navigationBarTitle}}" types="{{contact}}" url="{{urls}}"></v-navigationBar>
+<view class="item-box">
+     <view style="margin-left:30rpx;padding-top:30rpx;">最近订单</view>
+      <van-divider/>
+    <view class="items">
+      <view> <text>时间：2020-10-10 10:10</text><text class="status">已完成</text></view>
+      <van-divider/>
+      <view><van-icon name="circle" color="#59ba8c"/> <text style="padding-left:20rpx;">中国智慧产业园一期</text></view>
+      <view style="margin-top:20rpx;"><van-icon name="circle" color="red"/> <text style="padding-left:20rpx;">国购广场之心城</text></view>
+      <van-divider/>
+      <view>预估价格：￥64</view>
+      <view>        
       </view>
-			<van-icon name="edit" custom-class="right-edit" size="36rpx" bind:click="editAddress" data-id="{{item.id}}" />
-			<van-icon name="delete" custom-class="right-edit" size="36rpx" bind:click="deleteAddress" data-id="{{item.id}}" />
     </view>
-  </view>
-  <view class="bottom-box" bindtap="addAddress" wx:if="{{addressList.length > 0 && addressEdit == false}}">
-    <view class="add-btn">
-      <van-icon name="add" color="#e64340" size="36rpx" />
-      <view>新增收货地址</view>
     </view>
-    <van-icon name="arrow" size="36rpx" />
-  </view>
-</view>
+    <view class="item-box" style="margin-bottom:30rpx;">
+     <view style="margin-left:30rpx;padding-top:30rpx;">常见问题</view>
+      <van-divider/>
+    <view class="items">
+      <van-collapse value="{{ activeNames }}" bind:change="onChange">
+  <van-collapse-item title="如何申请开票？" name="1">
+    提供多样店铺模板，快速搭建网上商城
+  </van-collapse-item>
+  <van-collapse-item title="我要搬家如何下单？" name="2">
+    网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失
+  </van-collapse-item>
+  <van-collapse-item title="司机绕路怎么办？" name="3">
+    线上拓客，随时预约，贴心顺手的开单收银
+  </van-collapse-item>
 
-<view class="" wx:if="{{addressList == null && addressEdit == false}}">
-	<view class="content-1">暂无地址信息</view>
-	<view class="content-2">请点击按钮添加地址信息</view>
-	<van-button color="#e64340" custom-class="button" bindtap="addAddress">添加新地址</van-button>
-</view>
-
-<view class="addressEdit" wx:if="{{addressEdit}}">
-	<van-field
-    value="{{ addressData.linkMan }}"
-    label="用户姓名"
-    placeholder="填写收件人姓名"
-		clearable
-    bind:change="linkManChange"
-  />
-	<van-field
-    value="{{ addressData.mobile }}"
-    label="手机号码"
-    placeholder="11位手机号码"
-		type="number"
-		clearable
-    bind:change="mobileChange"
-  />
-	<picker mode="multiSelector" range="{{pickerRegionRange}}" range-key="name" value="{{pickerSelect}}" bindchange="bindchange" bindcolumnchange="bindcolumnchange">
-		<van-field
-			value="{{ showRegionStr }}"
-			label="选择地区"
-			readonly
-			is-link
-		/>
-	</picker>
-	<van-field
-    value="{{ addressData.address }}"
-    label="详细地址"
-    placeholder="街道、楼栋、门牌等"
-		type="textarea"
-		autosize
-		clearable
-    bind:change="addressChange"
-  />
-	<button class="save-btn" bindtap="bindSave">保存</button>
-	<button class="cancel-btn" bindtap="editCancel">取消</button>
-</view>
+ <van-collapse-item title="如何使用更换优惠券" name="4">
+    线上拓客，随时预约，贴心顺手的开单收银
+  </van-collapse-item>
+</van-collapse>
+    </view>
+    </view>

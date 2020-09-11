@@ -9,18 +9,7 @@ APP.configLoadOK = () => {
 
 Page({
   data: {
-    // 状态栏高度
-    statusBarHeight: wx.getStorageSync('statusBarHeight') + 'px',
-    // 导航栏高度
-    navigationBarHeight: wx.getStorageSync('navigationBarHeight') + 'px',
-    // 胶囊按钮高度
-    menuButtonHeight: wx.getStorageSync('menuButtonHeight') + 'px',
-    // 导航栏和状态栏高度
-    navigationBarAndStatusBarHeight:
-      wx.getStorageSync('statusBarHeight') +
-      wx.getStorageSync('navigationBarHeight') +
-      'px',
-      title:"云租企服",
+    
     userInfo: {
       nickName: '点击登录',
       avatarUrl: '/static/images/avatar.png'
@@ -30,7 +19,10 @@ Page({
     couponStatistics: {
       canUse: 0
     },
-    balance: 0.00
+    balance: 0.00,
+    navigationBarTitle:'个人中心',
+    contact:"arrow-left",
+    urls:'/pages/home/index'
   },
   onLoad() {
     const order_hx_uids = wx.getStorageSync('order_hx_uids')

@@ -7,15 +7,10 @@ APP.configLoadOK = () => {
 
 Page({
   data: {
-    addressList: [],
-    addressEdit: false,
-    cancelBtn: false,
-
-    pickerRegionRange: [],
-    pickerSelect:[0, 0, 0],
-    showRegionStr: '选择行政地址（省、市、区县）',
-
-    addressData: {}
+    navigationBarTitle:'客服中心',
+    contact:"arrow-left",
+    urls:'/pages/my/index',
+    activeNames: ['0'],
   },
  
   
@@ -45,6 +40,10 @@ Page({
     }   
     
   },
-  
+  onChange(event) {
+    this.setData({
+      activeNames: event.detail,
+    });
+  },
   
 })

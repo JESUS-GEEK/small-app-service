@@ -5,7 +5,9 @@ APP.configLoadOK = () => {
 }
 Page({
   data: {
-
+    navigationBarTitle:'用户协议',
+    contact:"arrow-left",
+    urls:'/pages/my/index',
   },
   onLoad: function (options) {
     this.cmsPage()

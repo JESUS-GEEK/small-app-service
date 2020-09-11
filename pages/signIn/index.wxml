@@ -1,5 +1,7 @@
 <!--pages/signIn/index.wxml-->
+
 <view class='signIn'>
+<v-navigationBar title="{{navigationBarTitle}}" types="{{contact}}" url="{{urls}}"></v-navigationBar>
   <view class='sign-com'>
     <view class='thead'>
       

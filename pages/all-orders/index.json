@@ -1,3 +1,5 @@
 {
-  "navigationBarTitleText": "我的班车"
+  "usingComponents": {
+    "v-navigationBar":"../navigationBar/index"
+  }
 }

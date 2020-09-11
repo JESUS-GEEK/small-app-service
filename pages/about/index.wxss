@@ -1,7 +1,7 @@
-.content {
-  padding: 32rpx;
-  line-height: 64rpx;
-}
-.content image {
-  max-width: 100%;
+.agreement{
+  width:90%;
+  margin:0 auto;
+  line-height:60rpx;
+  margin-top:30rpx;
+  margin-bottom:40rpx;
 }

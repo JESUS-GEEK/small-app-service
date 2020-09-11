@@ -1,3 +1,13 @@
-<view class="content">
-  <parser html="{{cmsPage.info.content}}" />
+<v-navigationBar title="{{navigationBarTitle}}" types="{{contact}}" url="{{urls}}"></v-navigationBar>
+<view class="agreement">
+<view>尊敬的学生家长：您好！</view>
+<view style="margin-top:20rpx;"></view>
+<view>感谢您对云租校车的信任和支持，欢迎您的孩子选择云租校车公司乘车协议如下:</view>
+<view style="margin-top:20rpx;"></view>
+<view>1、乘坐校车本着自愿的原则，在乘坐校车前需签订校车协议并交纳一个学期车费作为押金，本乘车协议以学期为期限，学期满后如需继续乘坐校车本协议顺延，如学期满后不在需要乘坐校车的请各位学生家长务必在学期末告知校车公司，公司做好司机师傅的线路安排，押金如数退还。如家长未告知校车公司或在通知交纳车费时临时告知不在乘坐校车的押金不予退还。</view>
+<view style="margin-top:20rpx;"></view>
+<view>2、校车公司车费收取标准：车费价格以整车拼车为基准1800元/人/学期(五公里以内)注：如超过五公里的，车费按校车收费标准收取，车费按包学期收取。注：对于中客、商务车、拼车价格以沿途站点接送为准，价格比轿车接送价格每人每学期有优惠。如家长对乘坐校车车型有特除要求的车费另议。
+注：学生乘坐校车一律6人一车，如开学前、或校车运行中出现个别学生由于自身原因请假或不再乘坐校车，请在云租小程序里取消当日预约，敬请家长仔细阅读本条款。</view>
+<view style="margin-top:20rpx;"></view>
+<view>3、乘坐校车期间所交的车费内不包含（学生乘车意外险），如学生家长有特除需求的可以与校车公司沟通，给学生附加实名制乘车意外险。</view>
 </view>
