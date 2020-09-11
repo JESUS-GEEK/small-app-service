@@ -4,7 +4,7 @@ const AUTH = require('utils/auth')
 
 App({
   onLaunch: function() {
-    wx.hideTabBar()    
+    wx.hideTabBar();    
     // WXAPI.init(CONFIG.subDomain)
     const that = this;
     // 检测新版本
