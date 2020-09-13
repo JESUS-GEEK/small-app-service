@@ -35,13 +35,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.hideTabBar();
-   this.setData({
-    navigationBarTitle:'云租企服'
-   })
-    wx.setNavigationBarTitle({
-      title: "云租接送"
-    }),
+   
     wx.getLocation({
       type: 'wgs84', //wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
       success: (res) => {

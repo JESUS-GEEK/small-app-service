@@ -66,7 +66,7 @@
 .my-box{
   position: absolute;
   width: 100vw;
-  top: 150rpx;
+  top: 80rpx;
   left: 0;
 }
 .login-btn {

@@ -1,5 +1,5 @@
 <view >
-  <v-navigationBar title="{{navigationBarTitle}}" types="{{contact}}" url="{{urls}}"></v-navigationBar>
+  <!-- <v-navigationBar title="{{navigationBarTitle}}" types="{{contact}}" url="{{urls}}"></v-navigationBar> -->
 	<van-divider/>
 <view class="main-box">
   <van-tabs active="{{ activeOrder }}" bind:change="onChange">

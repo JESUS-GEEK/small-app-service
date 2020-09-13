@@ -1,5 +1,5 @@
 <view class="my-bar">
-<v-navigationBar title="{{navigationBarTitle}}" types="{{contact}}" url="{{urls}}"></v-navigationBar>
+<!-- <v-navigationBar title="{{navigationBarTitle}}" types="{{contact}}" url="{{urls}}"></v-navigationBar> -->
 	<image mode='aspectFill' class='background' src='{{myBg}}'></image>	
 	<view class="my-box">
 		<view wx:if="{{hasLogin}}" class="head-bar">

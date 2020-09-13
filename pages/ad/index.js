@@ -15,9 +15,7 @@ Page({
  
   
   onLoad: function (e) {    
-    wx.setNavigationBarTitle({
-      title: "我的信息"
-    })
+    
   },
   onShow: function() {
 

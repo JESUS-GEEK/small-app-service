@@ -1,113 +1,123 @@
-const APP = getApp()
-const AUTH = require('../../utils/auth')
-// const WXAPI = require('apifm-wxapi')
-
-// fixed首次打开不显示标题的bug
-APP.configLoadOK = () => {
-  wx.setNavigationBarTitle({
-    title: wx.getStorageSync('mallName')
-  })
-}
-
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    latitude:'',
-    longitude:'',
-    points: [],
-    polyline: [],
-    // polyline: [{
-    //   points:[{
-    //       longitude: 117.129045,
-    //       latitude:31.825284
-    //     },
-    //     {
-    //       longitude: 117.150438,
-    //       latitude:31.837456
-    //     },{
-    //       longitude:117.165134,
-    //       latitude:31.870335
-    //     },
-    //   ],
-    //   color: "orange",
-    //   width: 20,
-    //   dottedLine: true,
-    // }],
-    markers:[],
-    show:false,
-    activeName: [],
-    steps: [
-      {
-        text: '中国声谷',
-        desc: '17:40:00',
-      },
-      {
-        text: '创新产业园',
-        desc: '18:00:00',
-      },
-      {
-        text: '国购广场',
-        desc: '18:10:10',
-      },
-    ],
-    activeStep:1,
-  },  
-  onLoad: function () {
-    // 设置标题
-    const mallName = wx.getStorageSync('mallName')
-    if (mallName) {
-      wx.setNavigationBarTitle({
-        title: "线路图"
-      })
-    }
-    var temp = [{
-      longitude: 117.129045,
-      latitude:31.825284
-    },
-    {
-      longitude: 117.150438,
-      latitude:31.837456
-    },{
-      longitude:117.165134,
-      latitude:31.870335
-    },
-  ]
-  var polyline = [{
-    color: "orange",
-    width: 20,
-    dottedLine: true,
-    points:temp,  
-  }]
-  this.setData({
-    polyline:polyline,
-    points:temp
-  })
-      wx.getLocation({
-        type: 'wgs84', //wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
-        success: (res) => {
-          this.setData({
-            latitude : res.latitude,
-            longitude : res.longitude,
-           
-            // polyline:this.polyline
-          })
-        },      
-      })
+    images:['../../images/buttom05.jpg','../../images/buttom02.jpg','../../images/swiperstudent.png'],
+    indicatorDots: true,
+    vertical: false,
+    autoplay: true,
+    interval: 2000,
+    duration: 500,
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    // wx.setNavigationBarTitle({
+    //   title: "云租接送"
+    // })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    this.setCountDown();
+  },
+  setCountDown:function(){
+    var mydate = new Date();
+    var totalSecond =parseInt(86400*10 - ((mydate.getHours() * 60 * 60) + (mydate.getMinutes() * 60) + (mydate.getSeconds())));
+    var interval = setInterval(function () {
+     // 秒数
+     var second = totalSecond;
+     // 天数位
+     var day = Math.floor(second / 3600 / 24);
+     var dayStr = day.toString();
+     if (dayStr.length == 1) dayStr = '0' + dayStr;
     
+     // 小时位
+     var hr = Math.floor((second - day * 3600 * 24) / 3600);
+     var hrStr = hr.toString();
+     if (hrStr.length == 1) hrStr = '0' + hrStr;
+    
+     // 分钟位
+     var min = Math.floor((second - day * 3600 *24 - hr * 3600) / 60);
+     var minStr = min.toString();
+     if (minStr.length == 1) minStr = '0' + minStr;
+    
+     // 秒位
+     var sec = second - day * 3600 * 24 - hr * 3600 - min*60;
+     var secStr = sec.toString();
+     if (secStr.length == 1) secStr = '0' + secStr;
+    
+     this.setData({
+      countDownDay: dayStr,
+      countDownHour: hrStr,
+      countDownMinute: minStr,
+      countDownSecond: secStr,
+     });
+     totalSecond--;
+     if (totalSecond < 0) {
+      clearInterval(interval);
+      wx.showToast({
+       title: '活动已结束',
+      });
+      this.setData({
+       countDownDay: '00',
+       countDownHour: '00',
+       countDownMinute: '00',
+       countDownSecond: '00',
+      });
+     }
+    }.bind(this), 1000);
+},
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
 
   },
-  onShow: function(){
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
 
   },
-  showDetails(){
-    this.setData({ show: true });
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
   },
-  onClose() {
-    this.setData({ show: false });
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
   },
-  onChange(event) {
-    this.setData({
-      activeName: event.detail,
-    });
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
   },
- 
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+  goToSchool(){
+    wx.reLanch({
+      url: 'pages/cooperative-school/index'
+    })
+  }
 })

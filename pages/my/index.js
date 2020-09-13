@@ -25,9 +25,6 @@ Page({
     urls:'/pages/home/index'
   },
   onLoad() {
-    wx.hideTabBar({
-      animation: true,
-    })
     const order_hx_uids = wx.getStorageSync('order_hx_uids')
     this.setData({
       // myBgmyBg: wx.getStorageSync('myBg'),

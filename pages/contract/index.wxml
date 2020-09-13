@@ -1,4 +1,4 @@
-<v-navigationBar title="{{navigationBarTitle}}" types="{{contact}}" url="{{urls}}"></v-navigationBar>
+<!-- <v-navigationBar title="{{navigationBarTitle}}" types="{{contact}}" url="{{urls}}"></v-navigationBar> -->
 <view class="charge-box">
 	<van-tabs active="{{ active }}" animated >
   <van-tab title="小型面包">

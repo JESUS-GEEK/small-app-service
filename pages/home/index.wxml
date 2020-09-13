@@ -1,6 +1,6 @@
 <!--pages/home/index.wxml-->
 <view class="container-body">
-<v-navigationBar title="{{navigationBarTitle}}" types="{{contact}}" url="{{urls}}"></v-navigationBar>
+<!-- <v-navigationBar title="{{navigationBarTitle}}" types="{{contact}}" url="{{urls}}"></v-navigationBar> -->
 <!-- ========= -->
 <map id="map" class="maMap" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}"  polyline="{{polyline}}" show-location enable-3D	show-compass show-scale	enable-rotate	enable-traffic >
 </map>

@@ -1,4 +1,4 @@
-<v-navigationBar title="{{navigationBarTitle}}" types="{{contact}}" url="{{urls}}"></v-navigationBar>
+<!-- <v-navigationBar title="{{navigationBarTitle}}" types="{{contact}}" url="{{urls}}"></v-navigationBar> -->
 <view class="agreement">
 <view>尊敬的学生家长：您好！</view>
 <view style="margin-top:20rpx;"></view>
